@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Xander's number sentences</title>
+  </head>
+  <body>
+    <h1>number sentences</h1>
+
+    <p>
+      <span id="a">a</span> + <span id="b">b</span> + <span id="c">c</span> = <input type="number" id="answer" />
+       <button onclick="checkAnswer()">answer</button>
+    </p>
+<p id="correct">well_done:)</p>
+<p id="try_again">try again :(</p>
+
+
+    <footer>
+      &copy; <i>Xander</i> 2017
+    </footer>
+<script>
+
+function get(id) {
+  return document.getElementById(id);
+}
+
+function random(min, max) {
+  return min + Math.floor((max - min + 1) * Math.random());
+}
+
+function hide(id) {
+  get(id).style.display = 'none';
+}
+
+function show(id) {
+  get(id).style.display = '';
+}
+
+
+
+// alert("yey")
+let spanA = get("a");
+let a = random(3, 100);
+spanA.innerText = a;
+
+let spanB = get("b");
+let b = random(3, 100);
+spanB.innerText = b;
+
+
+let spanC = get("c");
+let c = random(3, 100);
+spanC.innerText = c;
+
+hide("correct")
+hide("try_again")
+
+
+function checkAnswer() {
+  let inputAnswer = get("answer");
+  let answer = inputAnswer.value;
+  let realAnswer = a+b+c;
+
+  if (answer == realAnswer) {
+    show("correct")
+    hide("try_again")
+
+  } else {
+    hide("correct")
+    show("try_again")
+  }
+
+}
+
+
+
+
+
+</script>
+  </body>
+</html>
