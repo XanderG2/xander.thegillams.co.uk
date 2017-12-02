@@ -11,7 +11,7 @@
       <span id="a">a</span> + <span id="b">b</span> + <span id="c">c</span> = <input type="number" id="answer" />
        <button onclick="checkAnswer()">answer</button>
     </p>
-<p id="correct">well_done:)</p>
+<p id="correct">well_done :) <button onclick="newGame()">New game</button></p>
 <p id="try_again">try again :(</p>
 
 
@@ -40,20 +40,16 @@ function show(id) {
 
 // alert("yey")
 let spanA = get("a");
-let a = random(3, 100);
-spanA.innerText = a;
+let a;
+
 
 let spanB = get("b");
-let b = random(3, 100);
-spanB.innerText = b;
+let b;
 
 
 let spanC = get("c");
-let c = random(3, 100);
-spanC.innerText = c;
+let c;
 
-hide("correct")
-hide("try_again")
 
 
 function checkAnswer() {
@@ -72,7 +68,19 @@ function checkAnswer() {
 
 }
 
+function newGame() {
+  a = random(3, 100);
+  spanA.innerText = a;
+  b = random(3, 100);
+  spanB.innerText = b;
+  c = random(3, 100);
+  spanC.innerText = c;
 
+  hide("correct")
+  hide("try_again")
+}
+
+newGame();
 
 
 
