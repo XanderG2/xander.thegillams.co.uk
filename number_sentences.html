@@ -7,6 +7,9 @@
   <body>
     <h1>number sentences</h1>
 
+<p>
+  biggest number <input type="number" id="biggest" value="20"> <button onclick="newGame()">New game</button>
+</p>
     <p>
       <span id="a">a</span> + <span id="b">b</span> + <span id="c">c</span> = <input type="number" id="answer" />
        <button onclick="checkAnswer()">answer</button>
@@ -69,11 +72,13 @@ function checkAnswer() {
 }
 
 function newGame() {
-  a = random(3, 100);
+  let inputBiggest = get("biggest")
+  let biggest = inputBiggest.value
+  a = random(0,biggest);
   spanA.innerText = a;
-  b = random(3, 100);
+  b = random(0,biggest);
   spanB.innerText = b;
-  c = random(3, 100);
+  c = random(0, biggest);
   spanC.innerText = c;
 
   hide("correct")
