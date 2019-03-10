@@ -12,21 +12,5 @@
 <circle cx="60" cy="100" r="50" fill="indigo"/>
 <circle cx="60" cy="100" r="48" fill="violet"/>
 <circle cx="60" cy="100" r="46" fill="#9bf"/>
-
-
-
-
-
-
-
-
-
-
 <rect x="0" y="100"  width="120" height="19.99" fill="green"/>
-
-
-
-
-
-
 </svg>
