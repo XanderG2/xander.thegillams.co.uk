@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="900" height="900" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-
-
-  
-  <path d="M 0 10 L 10 0 L 20 10 Z"  fill="blue"/>
+<svg width="900" height="900" viewBox="0 0 180 180" version="1.1" xmlns="http://www.w3.org/2000/svg">
 
 
 
+  <path d="M 30 60    L 20 30     L 40 10    L 80 30    L 120 10     L 140 30    L 130 60   L 80 120   Z" fill="red" Stroke="black" />
+  <path d="M 40 40     l 10 -10 l 10 10        "  fill="transparent" stroke="black"  />
+  <path d="M 100 40     l 10 -10 l 10 10       "  fill="transparent" stroke="black" />
+  <path d="M 60 60     L 80 80 l 20 -20       "  fill="transparent" stroke="black" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <foreignObject x="0" y="120" width="160" height="100">
+    <h2 style="text-align:center"> I Love You <h2/>
+  </foreignObject>
 
 
 
