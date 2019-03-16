@@ -10,7 +10,7 @@
   <path d="M 60 60     L 80 80 l 20 -20       "  fill="transparent" stroke="black" />
 
   <foreignObject x="0" y="120" width="160" height="100">
-    <h2 style="text-align:center"> I Love You <h2/>
+    <h2 style="text-align:center"> I Love You </h2>
   </foreignObject>
 
 
