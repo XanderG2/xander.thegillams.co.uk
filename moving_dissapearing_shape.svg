@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="900" height="900" viewBox="0 0 180 180" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+
+  <style>
+    @keyframes pulse {
+      0% {
+        opacity: 0;
+      }
+      35% {
+        opacity: 1;
+        transform: translateX(20px);
+      }
+      50% {
+        opacity: 1; transform: translateY(20px) translateX(20px);
+      }
+      65% {
+        opacity: 0.7; transform: translateX(0px) translateY(20px);
+      }
+      95% {
+        opacity: 0;  transform:
+        translateX(0px n);
+      }
+    }
+
+
+    .rainbow {
+      animation-name: pulse;
+      animation-duration:12s;
+      animation-iteration-count: infinite;
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+<rect width="15" height="15"
+  fill="orange" class="rainbow">
+  </rect>
+</svg>
