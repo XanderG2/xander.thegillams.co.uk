@@ -10,13 +10,13 @@
       }
       35% {
         opacity: 1;
-        transform: translateX(165px);
+        transform: translateX(20px);
       }
       50% {
-        opacity: 1; transform: translateY(165px) translateX(165px);
+        opacity: 1; transform: translateY(20px) translateX(20px);
       }
       65% {
-        opacity: 0.7; transform: translateX(0px) translateY(165px);
+        opacity: 0.7; transform: translateX(0px) translateY(20px);
       }
       95% {
         opacity: 0;  transform:
