@@ -34,16 +34,127 @@
 
 
 
-
-
-
-
-
-
-
+<rect width="15" height="15"
+  x="60" y="30"
+  fill="orange" class="rainbow">
+  </rect>
 
 
 <rect width="15" height="15"
+  x="60"
   fill="orange" class="rainbow">
   </rect>
+
+  <rect width="15" height="15"
+    x="60" y="60"
+    fill="orange" class="rainbow">
+    </rect>
+
+    <rect width="15" height="15"
+      x="60" y="90"
+      fill="orange" class="rainbow">
+      </rect>
+
+      <rect width="15" height="15"
+        x="60" y="120"
+        fill="orange" class="rainbow">
+        </rect>
+
+        <rect width="15" height="15"
+          x="60" y="150"
+          fill="orange" class="rainbow">
+          </rect>
+
+          <rect width="15" height="15"
+            x="30" y="30"
+            fill="orange" class="rainbow">
+            </rect>
+
+
+          <rect width="15" height="15"
+            x="30"
+            fill="orange" class="rainbow">
+            </rect>
+
+            <rect width="15" height="15"
+              x="30" y="60"
+              fill="orange" class="rainbow">
+              </rect>
+
+              <rect width="15" height="15"
+                x="30" y="90"
+                fill="orange" class="rainbow">
+                </rect>
+
+                <rect width="15" height="15"
+                  x="30" y="120"
+                  fill="orange" class="rainbow">
+                  </rect>
+
+                  <rect width="15" height="15"
+                    x="30" y="150"
+                    fill="orange" class="rainbow">
+                    </rect>
+
+
+                    <rect width="15" height="15"
+                      x="0" y="30"
+                      fill="orange" class="rainbow">
+                      </rect>
+
+
+                    <rect width="15" height="15"
+                      fill="orange" class="rainbow">
+                      </rect>
+
+                      <rect width="15" height="15"
+                        x="0" y="60"
+                        fill="orange" class="rainbow">
+                        </rect>
+
+                        <rect width="15" height="15"
+                          x="0" y="90"
+                          fill="orange" class="rainbow">
+                          </rect>
+
+                          <rect width="15" height="15"
+                            x="0" y="120"
+                            fill="orange" class="rainbow">
+                            </rect>
+
+                            <rect width="15" height="15"
+                              x="0" y="150"
+                              fill="orange" class="rainbow">
+                              </rect>
+
+                              <rect width="15" height="15"
+                                x="90" y="30"
+                                fill="orange" class="rainbow">
+                                </rect>
+
+
+                              <rect width="15" height="15"
+                                x="90"
+                                fill="orange" class="rainbow">
+                                </rect>
+
+                                <rect width="15" height="15"
+                                  x="90" y="60"
+                                  fill="orange" class="rainbow">
+                                  </rect>
+
+                                  <rect width="15" height="15"
+                                    x="90" y="90"
+                                    fill="orange" class="rainbow">
+                                    </rect>
+
+                                    <rect width="15" height="15"
+                                      x="90" y="120"
+                                      fill="orange" class="rainbow">
+                                      </rect>
+
+                                      <rect width="15" height="15"
+                                        x="90" y="150"
+                                        fill="orange" class="rainbow">
+                                        </rect>
 </svg>
