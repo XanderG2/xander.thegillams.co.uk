@@ -186,4 +186,52 @@
   <rect width="15" height="15"
   x="120" y="150"
   fill="#999999" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="120" y="180"
+  fill="black" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="90" y="180"
+  fill="black" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="60" y="180"
+  fill="black" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="30" y="180"
+  fill="black" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+   y="180"
+  fill="black" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="150" y="180"
+  fill="black" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="150" y="150"
+  fill="#999999" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="150" y="120"
+  fill="#1212" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="150" y="90"
+  fill="red" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="150" y="60"
+  fill="purple" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="150" y="30"
+  fill="blue" class="rainbow"></rect>
+
+  <rect width="15" height="15"
+  x="150" y="0"
+  fill="orange" class="rainbow"></rect>
 </svg>
