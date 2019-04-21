@@ -25,7 +25,7 @@
       values="10;15;10"/>
       <animate dur="15s"
         repeatCount="indefinite" attributeName="fill"
-        values="red;green;blue;purple;pink;black;lightblue;darkblue;navyblue;darkpurple;lightpink;darkpink;lightpurple;peach;darkpeach;lightpeach;#c7ef13
+        values="red;green;blue;purple;pink;black;lightblue;darkblue;navyblue;darkpurple;lightpink;darkpink;lightpurple;#ffe5b4;#ffcba4;#c7ef13
 ;darkred;lightred;lime"/>
 <animate dur="1s"
   repeatCount="indefinite" attributeName="cy"
@@ -36,29 +36,58 @@
   </circle>
 
   <!-- neck -->
-    <path d=" M  100 35 L 100 40" stroke="black" fill="transparent"/>
+    <path d=" M  100 35 L 100 40" stroke="black" fill="transparent">
+
+  <animate dur="15s"
+    repeatCount="indefinite" attributeName="stroke"
+    values="red;green;blue;purple;pink;black;lightblue;darkblue;navyblue;darkpurple;lightpink;darkpink;lightpurple;#ffe5b4;#ffcba4;#c7ef13
+;darkred;lightred;lime"/>
+
+    </path>
 
     <!-- body and legs -->
     <path d=" M  100 40 L 110 70 L 110 90 M 110 70 L 90 90" stroke="black" fill="transparent" >
 <animate dur="1s" repeatCount="indefinite" attributeName="d"
   values=" M  100 40 L 110 70 L 110 110 M 110 70 L 90 110;  M  100 40 L 90 70 L 110 110 M 90 70 L 90 110;  M  100 40 L 110 70 L 110 110 M 110 70 L 90 110" />
+  <animate dur="15s"
+    repeatCount="indefinite" attributeName="stroke"
+    values="red;green;blue;purple;pink;black;lightblue;darkblue;navyblue;darkpurple;lightpink;darkpink;lightpurple;#ffe5b4;#ffcba4;#c7ef13
+;darkred;lightred;lime"/>
     </path>
 
     <!-- arm on right of screen -->
     <path d="M 100 40 l 15 15 l 15 15" stroke="black" fill="transparent">
  <animate dur="1s" repeatCount="indefinite" attributeName="d"
    values="M 100 40 l 15 15 l 15 15; M 100 40 l 0 15 l -15 15; M 100 40 l 15 15 l 15 15" />
+   <animate dur="15s"
+     repeatCount="indefinite" attributeName="stroke"
+     values="red;green;blue;purple;pink;black;lightblue;darkblue;navyblue;darkpurple;lightpink;darkpink;lightpurple;#ffe5b4;#ffcba4;#c7ef13
+ ;darkred;lightred;lime"/>
      </path>
 
      <!-- arm on left of screen -->
      <path d="M 100 40 l -15 15 l 15 15" stroke="black" fill="transparent">
  <animate dur="1s" repeatCount="indefinite" attributeName="d"
    values="M 100 40 l -15 15 l 15 15; M 100 40 l -20 15 l -15 15; M 100 40 l -15 15 l 15 15" />
+   <animate dur="15s"
+     repeatCount="indefinite" attributeName="stroke"
+     values="red;green;blue;purple;pink;black;lightblue;darkblue;navyblue;darkpurple;lightpink;darkpink;lightpurple;#ffe5b4;#ffcba4;#c7ef13
+ ;darkred;lightred;lime"/>
  </path>
 
  <!-- text -->
  <text x="50" y="150" width="100" height="100" textLength="100" fill="red">
   Do the Floss
  </text>
-
+ <text x="50" y="163" width="100" height="100" textLength="100" fill="red">
+  yeah yeah yeah
+ </text>
+<!-- music notes-->
+<path d="M 36 150 l 0 -9 l 7 0 l 0 9 "  stroke="red" fill="transparent"> </path>
+<circle cx="36" cy="150" r="1.5" fill="red"> </circle>
+<circle cx="43" cy="150" r="1.5" fill="red"> </circle>
+<!-- second-->
+<path d="M 156 165 l 0 -9 l 7 0 l 0 9 "  stroke="red" fill="transparent"> </path>
+<circle cx="156" cy="165" r="1.5" fill="red"> </circle>
+<circle cx="163.02" cy="165" r="1.5" fill="red"> </circle>
 </svg>
