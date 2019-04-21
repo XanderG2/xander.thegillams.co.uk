@@ -83,11 +83,11 @@
   yeah yeah yeah
  </text>
 <!-- music notes-->
-<path d="M 36 150 l 0 -9 l 7 0 l 0 9 "  stroke="red" fill="transparent"> </path>
-<circle cx="36" cy="150" r="1.5" fill="red"> </circle>
-<circle cx="43" cy="150" r="1.5" fill="red"> </circle>
+<path d="M 36 150 l 0 -9 l 7 0 l 0 10 "  stroke="red" fill="transparent"> </path>
+<circle cx="35" cy="150" r="1.5" fill="red"> </circle>
+<circle cx="42" cy="150" r="1.5" fill="red"> </circle>
 <!-- second-->
 <path d="M 156 165 l 0 -9 l 7 0 l 0 9 "  stroke="red" fill="transparent"> </path>
-<circle cx="156" cy="165" r="1.5" fill="red"> </circle>
-<circle cx="163.02" cy="165" r="1.5" fill="red"> </circle>
+<circle cx="155" cy="165" r="1.5" fill="red"> </circle>
+<circle cx="162" cy="165" r="1.5" fill="red"> </circle>
 </svg>
