@@ -17,7 +17,11 @@
     }
   </style>
 
-
+<rect x="0" y="0" width="200" height="200" fill="white">
+<animate dur="0.955s"
+  repeatCount="indefinite" attributeName="fill"
+  values="white;red;pink;blue;darkblue;blue;lightblue" />
+ </rect>
 
 <path d="M 60 150 L 60 100"  stroke="black" fill="transparent" >
   <animate dur="0.955s"
