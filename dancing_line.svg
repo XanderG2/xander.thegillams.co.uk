@@ -22,7 +22,7 @@
 <path d="M 60 150 L 60 100"  stroke="black" fill="transparent" >
   <animate dur="0.955s"
     repeatCount="indefinite" attributeName="d"
-    values="M 60 150 L 80 100;M 60 150 L 20 125 L 60 100;M 60 150 L 80 125 L 60 100;M 60 150 L 60 125 L 60 100;M 60 150 L 80 125 L 60 100"
+    values="M 60 150 L 80 100;M 60 150 L 20 125 L 60 100;M 60 150 L 80 125 L 60 100;M 60 150 L 60 125 L 60 100;M 60 150 L 80 125 L 60 100" />
 
  </path>
 
