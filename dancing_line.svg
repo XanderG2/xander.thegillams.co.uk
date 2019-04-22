@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="780" height="780" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    @keyframes pulse {
+      from {opacity: 0}
+      35% {opacity: 1}
+      50% {opacity: 1}
+      65% {opacity: 0}
+      to {opacity: 0}
+    }
+    .rainbow {
+      animation-name: pulse;
+      animation-duration:12s;
+      animation-iteration-count: infinite;
+    }
+  </style>
+
+
+
+<path d="M 60 150 L 60 100"  stroke="black" fill="transparent" >
+  <animate dur="0.955s"
+    repeatCount="indefinite" attributeName="d"
+    values="M 60 150 L 80 100;M 60 150 L 20 125 L 60 100;M 60 150 L 80 125 L 60 100;M 60 150 L 60 125 L 60 100;M 60 150 L 80 125 L 60 100"
+
+ </path>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>
