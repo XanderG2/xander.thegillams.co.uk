@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+#story {white-space:pre}
+
+
+
+    </style>
+    <meta charset="utf-8">
+    <title>Captain Underpants Story</title>
+  </head>
+  <body>
+    <div id="story">
+      Loading...
+    </div>
+    <button id="new_number">new number</button>
+    <script>
+    window.onerror = e => {
+      const el = document.getElementById("story");
+      el.textContent = e;
+      el.style.backgroundColor = "red"
+      el.style.color = "white"
+      el.style.padding = "20px"
+    }</script>
+    <script src="./underpants.js"></script>
+  </body>
+</html>
