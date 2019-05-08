@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<script src="./XO.js"></script>
+   <style>
+	 * {
+
+	 	 transition: 1s;
+
+	 	 color: #fff;
+
+	 	 background-color: #000;
+
+	 	 font-family: serif;
+
+	 	 font-weight: 100;
+
+	 	 position: ;
+
+	 	 padding: 0;
+
+	 	 user-select: none;
+
+	  }
+
+	 th {
+
+	 	height: 21vh;
+
+	 	width: 33%;
+
+	 	font-size: 12vh;
+
+	 	border: 3.5px solid #f0f;
+
+	 	border-radius: 5px;
+
+	 }
+
+	 .st {
+
+	 	border-top: none;
+
+	 	border-left: none;
+
+	 	box-shadow: inset -3px -3px 4.5px #f0f,1px 1px 3.5px #f0f;
+
+	 }
+
+	 .nd {
+
+	 	border-top: none;
+
+	 	box-shadow: inset 0 -3px 4.5px #f0f,0 1px 3.5px #f0f;
+
+	 }
+
+	 .th {
+
+	 	border-top: none;
+
+	 	border-right: none;
+
+	 	box-shadow: inset 3px -3px 4.5px #f0f,-1px 1px 3.5px #f0f;
+
+	 }
+
+	 .fo {
+
+	 	border-left: none;
+
+	 	box-shadow: inset -3px 0 4.5px #f0f,1px 0 3.5px #f0f;
+
+	 }
+
+	 .fi {
+
+	 	box-shadow: inset 0 0 15px #f0f,0 0 11px #f0f;
+
+	 }
+
+	 .se {
+
+	 	border-right: none;
+
+	 	box-shadow: inset  3px 0 4.5px #f0f,-1px 0 3.5px #f0f;
+
+	 }
+
+	 .sev {
+
+	 	border-bottom: none;
+
+	 	border-left: none;
+
+	 	box-shadow: inset -3px 3px 4.5px #f0f,1px -1px 3.5px #f0f;
+
+	 }
+
+	 .ei {
+
+	 	border-bottom: none;
+
+	 	box-shadow: inset 0 3px 4.5px #f0f,0 -1px 3.5px #f0f;
+
+	 }
+
+	 .ni {
+
+	 	border-bottom: none;
+
+	 	border-right: none;
+
+	 	box-shadow: inset 3px 3px 4.5px #f0f , -1px -1px 3.5px #f0f;
+
+	 }
+
+	 table {
+
+	 	z-index: -2;
+
+	 }
+
+	 td {
+
+	 	text-align: center;
+
+	 	font-size: 32px;
+
+	 	width: 50%;
+
+	 	font-family: cursive;
+
+	 }
+
+	 #a {
+
+	 	color: #0f0;
+
+	 	text-shadow: 0 0 10px #0f0;
+
+	 	animation: win 2s infinite linear;
+
+	 	box-shadow: inset 0 0 15px #fff;
+
+	 }
+
+	 @keyframes win {
+
+	 	0%{
+
+	 		color: #ff0;
+
+	 		box-shadow:inset 0 0 15px #fff, 0 0 6px #fff;
+
+	 		text-shadow: 0 0 20px #fff;
+
+	 	}
+
+	 	50%{
+
+	 		color: lightblue;
+
+	 		box-shadow: 0 0 0 #fff;
+
+	 	}
+
+	 	100%{
+
+	 		color: #f0f;
+
+	 		box-shadow: inset 0 0 15px #fff, 0 0 6px #fff;
+
+	 		text-shadow: 0 0 2px #fff;
+
+	 	}
+
+	 }
+
+	 q {
+
+	 	quotes: '“' '”';
+
+	 	font-size: xx-large;
+
+	 }
+
+	 b:not(.b) {
+
+	 	font-size: small;
+
+	 	animation: b 3s infinite;
+
+	 }
+
+	 @keyframes b{
+
+	 	from{
+
+	 		color: #f0f;
+
+	 	}
+
+	 	to{
+
+	 		color: #fff;
+
+	 	}
+
+	 }
+
+	 dialog {
+
+	 	position: absolute;
+
+	 	top: -400px;
+
+	 	font-size: x-large;
+
+	 	text-align: center;
+
+	 	padding: 5px 50px;
+
+	 	border: 3.5px solid #f0f;
+
+	 	box-shadow: 0 0 10px #f0f;
+
+	 	border-radius: 5px;
+
+	 	filter: drop-shadow(0 0 2px #fff);
+
+	 	opacity: .9;
+
+	 }
+
+	 h5 {
+
+	 	position: fixed;
+
+	 	bottom: 2px;
+
+	 	right: 1px; left: 1px;
+
+	 	box-shadow: inset 0 0 3px #f0f, 1px 1px 3px #f0f;
+
+	 	border: 2.5px solid #f0f;
+
+	 	padding: 5px 10px;
+
+	 	margin: auto;
+
+	 	border-radius: 8px;
+
+	 	color: white;
+
+	 }
+
+	 h5 > a {
+
+	 	text-decoration: none;
+
+	 }
+
+
+	 </style>
+		<title>Tic Tac Toe [My first Game](X/O)</title>
+
+	</head>
+
+	<body>
+
+		<table width=100%>
+
+			<tr>
+
+				<td>X</td>
+
+				<td>O</td>
+
+			</tr>
+
+			<tr>
+
+				<td colspan=2><span>0</span><b class=b>/</b><span>0</span></td>
+
+			</tr>
+
+		</table>
+
+		<dialog open><p>The winner is</p><q id=q></q>________<br /><b>Tap or click to continue</b></dialog>
+
+		<table width=100%>
+
+			<tr>
+
+				<th onclick=fu(this) class="st"></th>
+
+				<th onclick=fu(this) class="nd"></th>
+
+				<th onclick=fu(this) class="th"></th>
+
+			</tr>
+
+			<tr>
+
+				<th onclick=fu(this) class="fo"></th>
+
+				<th onclick=fu(this) class="fi"></th>
+
+				<th onclick=fu(this) class="se"></th>
+
+			</tr>
+
+			<tr>
+
+				<th onclick=fu(this) class="sev"></th>
+
+				<th onclick=fu(this) class="ei"></th>
+
+				<th onclick=fu(this) class="ni"></th>
+
+			</tr>
+
+		</table>
+
+		<center/>
+
+		<br />
+
+		<br />
+
+
+
+		<script>
+
+document.getElementsByTagName('span')[2].innerHTML=new Date() ? new Date().getFullYear() : 'Yet';
+
+		</script>
+
+	</body>
+
+</html>

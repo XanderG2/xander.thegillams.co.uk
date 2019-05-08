@@ -24,8 +24,8 @@ ${random(grossAdjective)} ${random(grossThing)} and I am your new teacher."
 ${firstName} had seen this ${random(adjective)} guy before ! He was a
 ${random(adjective)} villan who was trying to take over ${random(place)}!
 "You're not a teacher!" ${firstName} shouted. "yor are the evil villan,Professor ${random(grossAdjective)} ${random(grossThing)}!"
- ${firstName} grabbed a ${random(adjective)} ${random(largeThing)}and ${random(verbEndingInEd)} it at their new teacher. But the evil
- villan just ${random(verbEndingInEd)}
+ ${firstName} grabbed a ${random(adjective)} ${random(largeThing)} and ${random(verbEndingInEd)} it at their new teacher. But the evil
+ villan just ${random(verbEndingInEd)} "you cant stop me!" he yelled. "Not even that ${random(adjective)}" superhero.
 
 
 
