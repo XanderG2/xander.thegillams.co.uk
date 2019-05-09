@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+
+<head>
+	<style>
+		body {
+
+
+
+}
+	</style>
+</head>
+
+<div class="box">
+
+	<div class="butt">button</div>
+
+</div>
+
+<style>
+
+.box {
+
+ position: absolute;
+
+ top: 50%;
+
+ left: 50%;
+
+ transform: translate(-50%, -50%);
+
+}
+
+.butt {
+
+ border: 3px solid #333;
+
+ font-size: 30px;
+
+ color: #444;
+
+ text-decoration: none;
+
+ text-transform: uppercase;
+
+ width: 500px;
+
+ height: 300px;
+
+ display: block;
+
+ text-align: center;
+
+ line-height: 50px;
+
+ font-family: Arial, sans-serif;
+
+ position: relative;
+
+ transition: .5s;
+
+ overflow: hidden;
+
+ border-radius: 2px;
+
+}
+
+.butt::before,
+
+.butt::after {
+
+ position: absolute;
+
+ content: '';
+
+ width: 100%;
+
+ height: 100%;
+
+ background: #222;
+
+ top: 0;
+
+ left: -100%;
+
+ opacity: .5;
+
+ transition: .3s;
+
+ z-index: -1;
+
+}
+
+.butt::after {
+
+ opacity: 1;
+
+ transition-delay: .2s;
+
+}
+
+.butt:hover {
+
+ color: #fff;
+
+}
+
+.butt:hover::before,
+
+.butt:hover::after {
+
+ left: 0;
+
+}
+
+
+
+
+
+.pulse {
+
+ background-color: yellow;
+
+ border-radius: 50%;
+
+ animation: pulse 2s ease-out;
+
+ transform: scale(0);
+
+ position: absolute;
+
+}
+
+@keyframes pulse {
+
+ to {
+
+  transform: scale(2);
+
+  background-color: #ff0;
+
+  opacity: 0;
+
+ }
+
+}
+
+</style>
+
+<script>
+
+var buttons = document.getElementsByClassName('butt'),
+
+	forEach = Array.prototype.forEach;
+
+
+
+forEach.call(buttons, function (b) {
+
+	b.addEventListener('click', addElement);
+
+});
+
+
+
+function addElement(e) {
+
+	var addDiv  = document.createElement('div'),
+
+		mValue  = Math.max(this.clientWidth, this.clientHeight),
+
+		rect	= this.getBoundingClientRect();
+
+		sDiv	= addDiv.style,
+
+		px	  = 'px';
+
+
+
+	sDiv.width  = sDiv.height = mValue + px;
+
+	sDiv.left  = e.clientX - rect.left - (mValue / 2) + px;
+
+	sDiv.top   = e.clientY - rect.top - (mValue / 2) + px;
+
+
+
+	addDiv.classList.add('pulse');
+
+	this.appendChild(addDiv);
+
+}
+
+</script>
