@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="780" height="780" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<!--smiley face-->
+<circle cx="20" cy="20" r="20" fill="yellow"></circle>
+<circle cx="15" cy="15" r="1"></circle>
+<circle cx="25" cy="15" r="1"></circle>
+<circle cx="20" cy="27" r="10" fill="transparent" stroke="black"></circle>
+<rect x="2"    y="16"  width="30" height="12.5" fill="yellow"></rect>
+<!--winking face -->
+<circle cx="70" cy="20" r="20" fill="yellow"></circle>
+<circle cx="65" cy="15" r="1"></circle>
+<path d="M 75 15 L 80 15"stroke="black"></path>
+<circle cx="70" cy="27" r="10" fill="transparent" stroke="black"></circle>
+<rect x="55"    y="16"  width="30" height="12.5" fill="yellow"></rect>
+<!--sticking tongue out-->
+<circle cx="120" cy="20" r="20" fill="yellow"></circle>
+<circle cx="115" cy="15" r="1"></circle>
+<circle cx="125" cy="15" r="1"></circle>
+<path d=" "
+</svg>
