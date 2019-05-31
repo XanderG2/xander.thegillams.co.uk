@@ -1,0 +1,7 @@
+
+  <svg width="100%" height="50">
+ <rect width="100%" height="40" fill="lightblue"></rect>
+  </svg>
+  <svg width="100%" height="100%">
+<rect width="100%" height="100%" fill="darkblue"></rect>
+  </svg>
