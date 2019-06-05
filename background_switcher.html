@@ -10,7 +10,7 @@ background-color: lightblue ;
   </head>
 <body>
 
-<h1 id="color">Which colour??</h1>
+<h1 id="color">type in options to see options then type in a color and press set</h1>
 
 <input id="Background" type="search" list="colors" />
 
@@ -93,7 +93,11 @@ document.body.style.backgroundColor="salmon";
 color.inerHTML="SALMON";
 
 }
+if(val=="options"){
+  document.body.style.backgroundColor="transparent"
+color.innerHTML="yellow green white orange salmon and red"
 
+}
 
 }
 
