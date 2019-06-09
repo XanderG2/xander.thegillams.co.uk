@@ -120,6 +120,9 @@ const story = {
     actions: [
       {
         text: "go left",
+        action() {
+          go("left");
+        },
       },
       {
         text: "go right",
@@ -140,6 +143,28 @@ const story = {
         },
       },
     ],
+  },
+  left: {
+    message:
+      "you go left you hear screams you look around and see a hallway. You can't see whats at the end. Do you take a peek or go back",
+    actions: [
+      {
+        text: "take a peek",
+        action() {
+          go("takeAPeek");
+        },
+      },
+      {
+        text: "go back",
+        action() {
+          go("corridor");
+        },
+      },
+    ],
+  },
+  takeAPeek: {
+    message:
+      "You go to the end of the hallway. You see a door. Do you go into the door or go back?",
   },
 };
 
