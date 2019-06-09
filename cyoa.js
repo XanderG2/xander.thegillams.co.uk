@@ -61,8 +61,25 @@ function setActions(buttons) {
 /* Xander */
 const story = {
   start: {
-    message:
-      "you awaken in a dark room. By the bed is an enchient, dusty lamp. The door way leeds to a corridor.",
+    message: "you awaken in a dark room.",
+    actions: [
+      {
+        text: "look around",
+        action() {
+          go("lookAround");
+        },
+      },
+    ],
+  },
+
+  lookAround: {
+    message: function() {
+      if (state.lampOn) {
+        return "By the bed is an enchient, dusty lamp, which is on. The door way leeds to a corridor.";
+      } else {
+        return "By the bed is an enchient, dusty lamp, which is off. The door way leeds to a corridor.";
+      }
+    },
     actions: [
       {
         text: "go to corridor",
@@ -70,16 +87,29 @@ const story = {
           go("corridor");
         },
       },
+      {
+        text: "toggle lamp",
+        action() {
+          state.lampOn = !state.lampOn;
+          go("lamp");
+        },
+      },
     ],
   },
 
-  hi: {
-    message: "hi",
+  lamp: {
+    message: function() {
+      if (state.lampOn) {
+        return "The lamp is on";
+      } else {
+        return "The lamp is off";
+      }
+    },
     actions: [
       {
-        text: "go back to start",
+        text: "look around",
         action() {
-          restart();
+          go("lookAround");
         },
       },
     ],
