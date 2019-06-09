@@ -1,107 +1,33 @@
-
 <html>
-<head>
-  <style>
-body{
-background-color: lightblue ;
-
-}
-  </style>
+  <head>
+    <style>
+      body {
+        background-color: lightblue;
+      }
+    </style>
   </head>
-<body>
+  <body>
+    <h1 id="color">
+      type in options to see options then type in a color and press set
+    </h1>
 
-<h1 id="color">type in options to see options then type in a color and press set</h1>
+    <input id="Background" type="search" list="colors" />
 
-<input id="Background" type="search" list="colors" />
+    <datalist id="colors">
+      <option value="Red"> </option>
 
-<datalist id="colors">
+      <option value="Green"> </option>
 
-	<option value="Red">
+      <option value="Yellow"> </option>
 
-	<option value="Green">
+      <option value="white"> </option>
 
-	<option value="Yellow">
+      <option value="orange"> </option>
 
-	<option value="white">
+      <option value="reset"> </option>
+    </datalist>
 
-	<option value="orange">
-
-	<option value="reset">
-
-</datalist>
-
-<input type="submit" value="set" onclick=set() />
-<script>
-function  set(){
-
-var color=document.getElementById ("color");
-
-var x=document.getElementById("Background");
-
- var val=x.value;
-
-if(val=="Green"){
-
-	 document.body.style.backgroundColor="green";
-
- color.innerHTML="GREEN";
-
-
-
-}
-
-if(val=="Red"){
-
-	 document.body.style.backgroundColor="red";	 color.innerHTML ="RED";
-
-}
-
-if(val=="Yellow"){
-
-	 document.body.style.backgroundColor="yellow";
-
- color.innerHTML ="YELLOW";
-
-}
-
-if(val=="white"){
-
-	document.body.style.backgroundColor="white";
-
-color.innerHTML ="WHITE";
-
-}
-
-if(val=="orange"){
-
-	document.body.style.backgroundColor="orange";
-
-color.innerHTML="ORANGE";
-
-
-
-}
-
-if(val=="reset"){
-
-	document.body.style.backgroundColor="lightblue";
-
-color.innerHTML="LIGHTBLUE";
-}
-if(val=="salmon"){
-document.body.style.backgroundColor="salmon";
-color.inerHTML="SALMON";
-
-}
-if(val=="options"){
-  document.body.style.backgroundColor="transparent"
-color.innerHTML="yellow green white orange salmon and red"
-
-}
-
-}
-
-</script>
-</body>
-
+    <input type="submit" value="set" onclick="set()" />
+    <script src="background_switcher.js"></script>
+  </body>
 </html>
