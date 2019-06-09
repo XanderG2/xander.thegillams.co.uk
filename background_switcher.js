@@ -6,10 +6,11 @@ window.set = function set() {
   //makes the input lowercase if they type it in uppercase
   const val = x.value.toLowerCase();
   //SetColor function
-  function SetColor(input, color, label) {
+  function SetColor(input, color, label, textColor = "Black") {
     if (val == input) {
       document.body.style.backgroundColor = color;
       h1.innerHTML = label;
+      h1.style.color = textColor;
     }
   }
   //Colors
@@ -31,4 +32,8 @@ window.set = function set() {
   SetColor("cream", "FEF9E2", "CREAM");
   SetColor("spruce leaves", "#4b7641", "SPRUCE LEAVES");
   SetColor("willow leaves", "#cad7c5", "WILLOW LEAVES");
+  SetColor("soot", "#5d5c5e", "BLACK AS SOOT", "White");
+  SetColor("black", "Black", "BLACK", "White");
+  SetColor("gray", "gray", "GRAY", "White");
+  SetColor("grey", "gray", "GREY");
 };
