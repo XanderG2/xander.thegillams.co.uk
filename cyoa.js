@@ -37,7 +37,7 @@ window.restart = restart;
 function addLog(html) {
   const divEl = document.createElement("div");
   divEl.className = "entry";
-  divEl.innerHTML = html;
+  divEl.innerHTML = typeof html === "function" ? html() : html;
   logEl.prepend(divEl);
 }
 
