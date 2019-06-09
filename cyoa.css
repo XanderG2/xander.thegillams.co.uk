@@ -21,7 +21,6 @@ html,
 }
 #controls {
   border-bottom: 1px solid black;
-  display: none;
 }
 #log {
   flex: 1 0 0;
