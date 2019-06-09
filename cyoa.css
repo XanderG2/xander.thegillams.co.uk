@@ -1,0 +1,47 @@
+body,
+html,
+.adventureArea {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  box-sizing: border-box;
+}
+.adventureArea {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+#controls,
+#log,
+#buttons {
+  padding: 1rem;
+}
+#controls {
+  border-bottom: 1px solid black;
+  display: none;
+}
+#log {
+  flex: 1 0 0;
+  overflow: auto;
+}
+#buttons {
+  flex: 0 0 auto;
+  border-top: 1px solid black;
+  height: 2rem;
+  line-height: 2rem;
+}
+.entry {
+  border-bottom: 1px solid grey;
+  padding: 2rem;
+  font-family: cursive;
+  color: #bbb;
+}
+.entry:first-child {
+  color: black;
+}
+.entry:last-child {
+  border-bottom: none;
+}
