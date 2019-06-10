@@ -165,7 +165,27 @@ const story = {
   takeAPeek: {
     message:
       "You go to the end of the hallway. You see a door. Do you go into the door or go back?",
+      actions [
+        {
+          text: "go into door",
+          action() {
+            go("dooratendofhallway");
+          }
+        }
+{
+  text: "go back"
+  action() {
+    go(hallway)
+  }
+}
+          },
+        },
+      ],
   },
+  dooratendofhallway {
+    message:
+      "You go to the end of the hallway. You see a door. Do you go into the door or go back?",
+  }
 };
 
 function go(pageName) {
