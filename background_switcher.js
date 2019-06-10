@@ -36,4 +36,5 @@ window.set = function set() {
   SetColor("black", "Black", "BLACK", "White");
   SetColor("gray", "gray", "GRAY", "White");
   SetColor("grey", "gray", "GREY");
+  SetColor("sand", "rgb(194, 178, 128)", "SAND");
 };

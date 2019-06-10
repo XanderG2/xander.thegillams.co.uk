@@ -44,3 +44,7 @@ html,
 .entry:last-child {
   border-bottom: none;
 }
+
+.DED {
+  background-image: url("https://i.stack.imgur.com/lLu6E.png");
+}

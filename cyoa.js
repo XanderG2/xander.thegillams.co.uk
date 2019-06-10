@@ -18,11 +18,24 @@ function saveState() {
   }
 }
 
+let timeout = null;
+function afterDelay(fn) {
+  if (timeout) {
+    clearTimeout(timeout);
+    timeout = null;
+  }
+  timeout = setTimeout(() => {
+    timeout = null;
+    fn();
+  }, 5000);
+}
+
 function load() {
   if (!state) {
     state = { pageName: "start" };
   }
   logEl.innerHTML = "";
+  logEl.className = "";
   setActions([]);
   go(state.pageName || "start");
   saveState();
@@ -165,27 +178,40 @@ const story = {
   takeAPeek: {
     message:
       "You go to the end of the hallway. You see a door. Do you go into the door or go back?",
-      actions [
-        {
-          text: "go into door",
-          action() {
-            go("dooratendofhallway");
-          }
-        }
-{
-  text: "go back"
-  action() {
-    go(hallway)
-  }
-}
-          },
+    actions: [
+      {
+        text: "go into door",
+        action() {
+          go("dooratendofhallway");
         },
-      ],
+      },
+      {
+        text: "go back",
+        action() {
+          go("hallway");
+        },
+      },
+    ],
   },
-  dooratendofhallway {
+  dooratendofhallway: {
     message:
-      "You go to the end of the hallway. You see a door. Do you go into the door or go back?",
-  }
+      "you go though you see a person playing a game. You think the screams come from the game. Do you tab the person?",
+    actions: [
+      {
+        text: "tap the person",
+        action() {
+          afterDelay(() => {
+            logEl.className = "DED";
+          });
+          go("tapperson");
+        },
+      },
+    ],
+  },
+  tapperson: {
+    message:
+      "you tap the person on the shoulder. they turn round. You regret that. You <strong>DIE</strong>! ",
+  },
 };
 
 function go(pageName) {
