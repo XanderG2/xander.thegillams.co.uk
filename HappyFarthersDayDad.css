@@ -1,0 +1,27 @@
+body {
+  background-color: midnightblue;
+}
+
+#heading {
+  font-family: cursive;
+
+  color: skyblue;
+}
+
+hr {
+  height: 5px;
+
+  width: 5cm;
+
+  background-color: purple;
+
+  outline: none;
+}
+
+img {
+  shadow: inset 10px 10px 10px lightblue;
+}
+#poem {
+  font-family: bold;
+  color: gray;
+}
