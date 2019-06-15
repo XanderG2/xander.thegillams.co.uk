@@ -13,6 +13,14 @@
       <div id="log">- no story yet -</div>
       <div id="buttons">- no options yet -</div>
     </div>
+    <div id="error"></div>
   </body>
+  <script>
+    window.onerror = (error, url, lineNumber) => {
+      const el = document.getElementById("error");
+      el.textContent = `${error} @ ${url} : ${lineNumber}`;
+      el.style.display = "block";
+    };
+  </script>
   <script src="cyoa.js"></script>
 </html>

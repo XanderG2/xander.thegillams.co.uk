@@ -1,0 +1,166 @@
+main {
+  column-count: 4;
+}
+h1 {
+  color: white;
+  background-color: red;
+}
+
+.red > div {
+  width: 50px;
+  height: 50px;
+  background: Red;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.orange > div {
+  width: 50px;
+  height: 50px;
+  background: orange;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.yellow > div {
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.green > div {
+  width: 50px;
+  height: 50px;
+  background: green;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.lightblue > div {
+  width: 50px;
+  height: 50px;
+  background: lightblue;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.blue > div {
+  width: 50px;
+  height: 50px;
+  background: blue;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.indigo > div {
+  width: 50px;
+  height: 50px;
+  background: indigo;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.violet > div {
+  width: 50px;
+  height: 50px;
+  background: violet;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.brown > div {
+  width: 50px;
+  height: 50px;
+  background: brown;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.black > div {
+  width: 50px;
+  height: 50px;
+  background: black;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.grey > div {
+  width: 50px;
+  height: 50px;
+  background: gray;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.maroon > div {
+  width: 50px;
+  height: 50px;
+  background: maroon;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.birch > div {
+  width: 50px;
+  height: 50px;
+  background: #f8dfa1;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.oak > div {
+  width: 50px;
+  height: 50px;
+  background: #765c48;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.spruce > div {
+  width: 50px;
+  height: 50px;
+  background: #6b6c5c;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.yellowgreen > div {
+  width: 50px;
+  height: 50px;
+  background: yellowgreen;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.darkorchid > div {
+  width: 50px;
+  height: 50px;
+  background: darkorchid;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.silver > div {
+  width: 50px;
+  height: 50px;
+  background: silver;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.mistyrose > div {
+  width: 50px;
+  height: 50px;
+  background: mistyrose;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.mintcream > div {
+  width: 50px;
+  height: 50px;
+  background: mintcream;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+.neon > div {
+  width: 50px;
+  height: 50px;
+  background: #37fd12;
+  transition: width 3s;
+  -webkit-transition: width 3s;
+}
+
+div:hover > div {
+  width: 100%;
+}
+div {
+  break-inside: avoid;
+}
+marquee {
+  background-color: red;
+  color: white;
+}

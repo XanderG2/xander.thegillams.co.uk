@@ -48,3 +48,16 @@ html,
 .DED {
   background-image: url("https://i.stack.imgur.com/lLu6E.png");
 }
+
+#error {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  right: 20px;
+  left: 20px;
+  border-radius: 20px;
+  border: 2px solid red;
+  background: #ff9999bb;
+  font-size: 2em;
+  padding: 1.5em;
+}

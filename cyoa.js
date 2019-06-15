@@ -154,10 +154,18 @@ const story = {
         action() {
           go("corridor");
         },
+          text: "go in the door"
+          action() {
+            go("righttwomoredoors");
+          }
+        },
+      },
       },
     ],
   },
-  left: {
+  left{
+    /*dunno||
+           \/*/
     message:
       "you go left you hear screams you look around and see a hallway. You can't see whats at the end. Do you take a peek or go back",
     actions: [
@@ -175,7 +183,12 @@ const story = {
       },
     ],
   },
+  //dunno ||
+  //      \/
   takeAPeek: {
+  //dunno||
+  //     \/
+  ///////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     message:
       "You go to the end of the hallway. You see a door. Do you go into the door or go back?",
     actions: [
@@ -211,6 +224,28 @@ const story = {
   tapperson: {
     message:
       "you tap the person on the shoulder. they turn round. You regret that. You <strong>DIE</strong>! ",
+  },
+  righttwomoredoors: {
+    message:
+      "you go through the door. You see two doors. Do you go into one of them or go back?",
+    actions: [
+      {
+        text: "go back",
+        action() {
+          go("right");
+        },
+      },
+      {
+        action() {
+          go("endofrightwayleftdoor");
+        },
+      },
+      {
+        action() {
+          go("otherrightway");
+        },
+      },
+    ],
   },
 };
 
