@@ -1,5 +1,5 @@
 $(function() {
   $("#item").click(function() {
-    $("submenu").slideToggle(500);
+    $("#submenu").slideToggle(500);
   });
 });

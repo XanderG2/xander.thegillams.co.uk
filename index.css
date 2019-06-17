@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 #item:hover,
-item:focus {
+#item:focus {
   background-color: #f71735;
 }
 .menu {

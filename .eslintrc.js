@@ -4,6 +4,9 @@ module.exports = {
     browser: true,
     es6: true,
   },
+  globals: {
+    $: true,
+  },
   parserOptions: {
     ecmaVersion: 2018,
   },
