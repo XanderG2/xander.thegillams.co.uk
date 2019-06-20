@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+<link rel="stylesheet" href="buttonCountThingAngularJS.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<div ng-app="myApp" ng-controller="clickCounter">
+
+			<button ng-click="count=count+1">Click me!</button>
+
+			<p><h1>{{ count }}</h1></p>
+
+		</div>
+
+		<script>
+
+		var app = angular.module('myApp', []);
+
+		app.controller('clickCounter', function($scope) {
+
+			$scope.count = 0;
+
+		});
+
+		</script>
+
+	</body>
+
+</html>
