@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+#mytext {
+
+transform:rotate(90deg);
+
+webkit-transform:rotate(90deg);
+
+
+} 
+.redtext {
+  color: red;
+}
+.blacktext {
+  color: black;
+}
+
+</style> 
+      <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  </head>
+  <body>
+<marquee bgcolor="#1A090D">This text will scroll from right to left</marquee>
+
+<marquee direction="up" bgcolor="225560">This text will scroll from bottom to top</marquee>
+
+<marquee direction="down" width="250" height="200" behavior="alternate" style="border:solid" bgcolor="red">
+  <marquee class="redtext" behavior="alternate" bgcolor="skyblue">
+    This text will bounce
+  </marquee>
+</marquee>
+<marquee class="blacktext" bgcolor="lime">This is normal</marquee>
+<div id=mytext><marquee bgcolor="blue">Hello</marquee></div>
+</html>

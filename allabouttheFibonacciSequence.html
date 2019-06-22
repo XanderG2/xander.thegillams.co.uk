@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <style>
+     body{
+      background-color: white;
+      color: black;
+     }
+    .TheFirst{
+    background-color: lightgray;
+    box-shadow: 10px 10px 10px 5px rgb(138, 130, 130);
+    color: black;
+    width: 9%;
+    }
+    </style>
+  </head>
+  <body>
+  <h1>The Fibbonacci Sequence</h1>
+  <br />
+  <p>The<b> Fibbonacci Sequence </b>is a sequence of numbers that
+  add up to make the next number.
+  </p>
+   <p>The <b>Fibbonacci Sequence</b> is infinite which means it goes on forever.</p>
+   <p>The first couple numbers are <blockquote class="TheFirst">1 1 2 3 5 8 13 21 34...</blockquote></p>
+   <br />
+   <p>Enter a number and it will show you the number that is that distance away from the start</p>
+<input type="number" id="number" value="7" onkeyup="outputfib()"/>
+<br />
+<br />
+<span id="span"></span>
+<script>
+    function fib(n) {
+        if (n < 3) return 1;
+        return fib(n - 2) + fib(n - 1);
+      }
+function outputfib() {
+  const input=document.getElementById("number");
+const n=parseInt(input.value, 10);
+const span=document.getElementById("span");
+span.textContent=fib(n);
+}
+</script>
+  </body>
+</html>
