@@ -1,0 +1,65 @@
+<!--https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_global_draggable-->
+<!--https://www.w3schools.com/tags/att_global_draggable.asp-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #div1, #div2 {
+        width: 350px;
+        height: 70px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+        box-shadow: 10px 5px 12px grey;
+      }
+      #div3, #div4 {
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+    </style>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("Text", ev.target.id);
+      }
+
+      function drop(ev) {
+        var data = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+        ev.preventDefault();
+      }
+    </script>
+  </head>
+  <body>
+    <h3><u>Drag and drop</u></h3>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br />
+    <p id="drag1" draggable="true" ondragstart="drag(event)">
+      Drag into the rectangle above this.
+    </p>
+    <br/>
+    <p>Drag the image into the rectangle</p>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br />
+    <img id="drag2" draggable="true" ondragstart="drag(event)" src="favicon.png"></img>
+    <br />
+    <p>Drag the image back and fourth into both of the squares.</p>
+    <br/>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <img id="drag3&4" draggable="true" ondragstart="drag(event)" src="favicon.png"></img>
+  </body>
+</html>
