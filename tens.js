@@ -23,6 +23,9 @@ function show(el) {
 }
 
 function selectCard(pos) {
+  if (pickedList.includes(pos)) {
+    return;
+  }
   pickedList.push(pos);
   let total = 0;
   pickedList.forEach(function(pos) {
