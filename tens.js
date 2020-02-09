@@ -8,7 +8,7 @@ const scoreEl = document.getElementById("score");
 
 const BOARD_MAX_SIZE = 12;
 const PICKED_MAX_SIZE = 3;
-const INTERVAL = 1000;
+const INTERVAL = 1500;
 const TARGET = 10;
 
 const pickedList = [];
@@ -55,7 +55,7 @@ function render() {
   boardList.forEach(function(cardNumber, pos) {
     html += `<div class="card ${
       pickedList.includes(pos) ? "selected" : ""
-    }" onclick="selectCard(${pos})">${cardNumber}</div>`;
+    }" onmousedown="selectCard(${pos})">${cardNumber}</div>`;
   });
   cardsEl.innerHTML = html;
 }
@@ -71,7 +71,7 @@ function addCard() {
     youlose();
     return;
   }
-  const number = 1 + Math.floor(Math.random() * (TARGET - 1));
+  const number = 1 + Math.floor(Math.pow(Math.random(), 1.5) * (TARGET - 1));
   boardList.push(number);
   render();
 }
