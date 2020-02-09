@@ -1,5 +1,6 @@
 const startEl = document.getElementById("start");
 const gameEl = document.getElementById("game");
+const cardsEl = document.getElementById("cards");
 const youloseEl = document.getElementById("youlose");
 const startbuttonEl = document.getElementById("startbutton");
 const closebuttonEl = document.getElementById("closebutton");
@@ -52,11 +53,11 @@ function selectCard(pos) {
 function render() {
   let html = "";
   boardList.forEach(function(cardNumber, pos) {
-    html += `<div class="card" onclick="selectCard(${pos})">${cardNumber}  ${
-      pickedList.includes(pos) ? "*" : ""
-    }</div>`;
+    html += `<div class="card ${
+      pickedList.includes(pos) ? "selected" : ""
+    }" onclick="selectCard(${pos})">${cardNumber}</div>`;
   });
-  gameEl.innerHTML = html;
+  cardsEl.innerHTML = html;
 }
 
 function youlose() {
