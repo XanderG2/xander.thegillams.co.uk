@@ -11,4 +11,6 @@ function check(form) {
   if (form.userid.value == "Mummy" && form.pswrd.value == "Ilovedaddy") {
     window.open("https://xander.thegillams.co.uk/mummysAccount.html");
   }
+  if (form.userid.value == "Brontie" && form.pswrd.value == "145347") {
+    window.open("https://xander.thegillams.co.uk/TheCat.html");
 }
