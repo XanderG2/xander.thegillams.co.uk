@@ -17,4 +17,7 @@ function check(form) {
   if (form.userid.value == "Granny" && form.pswrd.value == "1234") {
     window.open("https://xander.thegillams.co.uk/grannysAccount.html");
   }
+  if (form.userid.value == "Captain" && form.pswrd.value == "609") {
+    window.open("https://xander.thegillams.co.uk/DogAccount.html");
+  }
 }
