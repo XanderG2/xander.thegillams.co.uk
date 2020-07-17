@@ -5,32 +5,85 @@
     </title>
     <meta charset="UTF-8" />
     <style>
-            .body { position: fixed; pverflow-y: scroll; width: 100% top: -20px; right:
-                  -40px; bottom: -40px; width: auto; height: auto;
-      backround-color: red;
+body {
+  margin: 0;
+  padding: 0;
+  background: url(user\ background.jpg);
+  background-size: cover;
+  font-family: sans-serif;
+}
+.loginbox {
+  width: 320px;
+  height: 420px;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%); 
+  box-sizing: border-box;
+  padding: 70px;
+  
+  }
+  .avatarbox{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 50px;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 25px;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .avatarbox img {
+    width: 100%;
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+    padding: 0 0 20px;
+    font-size: 22px;
+  }
+  .formbox {
+    width: 100%;
+  }
+  .formbox p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  .butt {
+    margin-left: 35%;
 
-
-                   }
-                  form {
-                   margin-top: 20%;
-                   margin-left: 45%
-
-
-                                     }
-    </style>
+  }
+</style>
   </head>
 
   <body>
     <script src="usersignin.js"></script>
-    <h1 align="center">
+    <h1>
       <a href="https://forms.gle/jG1fg2MUgWKwCmVD8">Sign up</a>
     </h1>
-    <form name="login">
+    <div class="loginbox">
+    <div class="avatarbox">
+      <img src="blank user.png" >
+    </div>
+    <h1>Login</h1>
+    <div class="formbox">
+       <form name="login">
       <div class="login">
-        <input type="text" placeholder="username" name="userid" /><br />
-        <input type="password" placeholder="password" name="pswrd" /><br />
-        <input type="button" onclick="check(this.form)" value="Login" />
-      </div>
+        <p>username</p>
+        <input type="text" placeholder="Enter Username" name="userid" /><br />
+        <p>Password</p>
+        <input type="password" placeholder="Enter password" name="pswrd" /><br />
+        <input type="button" onclick="check(this.form)" value="Login" class="butt"/>
+        <br/><br/><a align="center"href="https://forms.gle/cHB4Rxh2x6VJbpqW7">Forgot Password</a>
+      </div></div>
+   
+    </div>
     </form>
   </body>
 </html>
