@@ -9,7 +9,7 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   user-select: none;
 }
 
@@ -17,7 +17,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: black;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #container1 {
