@@ -154,16 +154,16 @@ const story = {
         action() {
           go("corridor");
         },
-          text: "go in the door"
-          action() {
-            go("righttwomoredoors");
-          }
-        },
       },
+      {
+        text: "go in the door",
+        action() {
+          go("righttwomoredoors");
+        },
       },
     ],
   },
-  left{
+  left: {
     /*dunno||
            \/*/
     message:
@@ -186,9 +186,9 @@ const story = {
   //dunno ||
   //      \/
   takeAPeek: {
-  //dunno||
-  //     \/
-  ///////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    //dunno||
+    //     \/
+    ///////////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     message:
       "You go to the end of the hallway. You see a door. Do you go into the door or go back?",
     actions: [
