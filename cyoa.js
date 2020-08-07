@@ -224,6 +224,7 @@ const story = {
   tapperson: {
     message:
       "you tap the person on the shoulder. they turn round. You regret that. You <strong>DIE</strong>! ",
+    actions: [],
   },
   righttwomoredoors: {
     message:
