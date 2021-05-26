@@ -1,0 +1,59 @@
+/*deletes margin for grey box*/
+body {
+  margin: 0;
+  font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande,
+    sans-serif;
+}
+
+.header {
+  background-color: #dee1e3;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.headertop,
+.headerbottom {
+  display: flex;
+}
+
+.headertop > div,
+.headerbottom > div {
+  flex-grow: 1;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+}
+
+.headerbottom > div:hover {
+  border-bottom: 2px solid black;
+}
+.name {
+  font-weight: 800;
+  font-size: 32px;
+  font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande,
+    sans-serif;
+  line-height: 44.8px;
+  border-top: 30px solid transparent;
+  padding: 10px;
+}
+.nameandpic {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+}
+.fname {
+  font-weight: 200;
+  font-size: 16px;
+  font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande,
+    sans-serif;
+  line-height: 44.8px;
+  padding: 6px;
+}
+.fnamecontainer {
+  display: flex;
+  justify-content: flex-start;
+}
+.fimagecontainer {
+  display: flex;
+  justify-content: flex-start;
+}
