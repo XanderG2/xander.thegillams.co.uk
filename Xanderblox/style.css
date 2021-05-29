@@ -57,3 +57,51 @@ body {
   display: flex;
   justify-content: flex-start;
 }
+.searchbox {
+  border-radius: 25px;
+  border: 2px solid grey;
+  width: 120px;
+  height: 20px;
+}
+
+.continuegamename {
+  font-weight: 200;
+  font-size: 16px;
+  font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande,
+    sans-serif;
+  line-height: 44.8px;
+  padding: 6px;
+}
+.continuegamenamecontainer {
+  display: flex;
+  justify-content: flex-start;
+}
+.continuegameimgcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.discovergamename {
+  font-weight: 200;
+  font-size: 16px;
+  font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande,
+    sans-serif;
+  line-height: 44.8px;
+  padding: 6px;
+}
+.discovergameimgcontainer {
+  display: flex;
+  justify-content: flex-start;
+}
+.discovergameimgtag {
+  height: 125;
+  width: 125;
+  border-radius: 8;
+}
+.xxxxx {
+  text-align: center;
+}
