@@ -1,0 +1,21 @@
+h1 {
+  color: orange;
+}
+body {
+  background-color: white;
+}
+input {
+  border-radius: 8px;
+  background-color: grey;
+  outline: black;
+  width: 320px;
+}
+button {
+  color: orange;
+  background-color: red;
+  border-radius: 8px;
+}
+button:hover {
+  color: red;
+  background-color: orange;
+}
