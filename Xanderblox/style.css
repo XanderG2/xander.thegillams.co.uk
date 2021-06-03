@@ -78,13 +78,15 @@ body {
 }
 .continuegameimgcontainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
 }
 a {
   color: black;
   text-decoration: none;
 }
-
+body:hover {
+  cursor: url(kittencursor.png) 4 12, auto;
+}
 .discovergamename {
   font-weight: 200;
   font-size: 16px;
@@ -93,9 +95,10 @@ a {
   line-height: 44.8px;
   padding: 6px;
 }
-.discovergameimgcontainer {
+.discovermostengaging {
   display: flex;
   justify-content: flex-start;
+  overflow: auto;
 }
 .discovergameimgtag {
   height: 125;
@@ -104,4 +107,10 @@ a {
 }
 .xxxxx {
   text-align: center;
+}
+.continuegamename {
+  text-align: center;
+}
+.continuegamenameimgcontainer {
+  display: flex;
 }
