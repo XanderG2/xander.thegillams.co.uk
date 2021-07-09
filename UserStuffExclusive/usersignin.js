@@ -20,7 +20,10 @@ function check(form) {
   if (form.userid.value == "Captain" && form.pswrd.value == "609") {
     window.open("users/DogAccount.html");
   }
-  if (form.userid.value == "Granddad" && form.pswrd.value == "1111") {
+  if (form.userid.value == "Grandad" && form.pswrd.value == "1111") {
     window.open("users/grandadsAccount.html");
+  }
+  if (form.userid.value == "xCocoa" && form.pswrd.value == "290113") {
+    window.open("users/Xcocoa.html");
   }
 }
