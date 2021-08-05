@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Xander's Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .navbar {
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+
+      .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+
+      .navbar a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: red;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      #ablockquote {
+        box-shadow: 10px 10px 30px gray;
+        background-color: purple;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="./index_old.js"></script>
+  </head>
+  <body>
+    <div id="hidden">
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/XanderG2/xander.thegillams.co.uk"
+          >Latest on github</a
+        >
+        <div class="dropdown">
+          <button class="dropbtn">
+            Other pages
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="pages.html">Pages</a>
+            <!--not done yet will liknk xanderfence when done though-->
+            <a href=">#">Xandefence</a>
+            <a href="http://zack.thegillams.co.uk/">Zacks website</a>
+            <a href="https://zackxander.github.io">Shared website</a>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <br />
+      <i>
+        <a href="UserStuffExclusive/usersignin.html">
+          Sign up for <i><b>Exclusive</b></i> Content.
+        </a>
+      </i>
+      <h1>Hello, my name is xander</h1>
+      <img
+        width="850px"
+        height="500px"
+        src="https://www.minecraft.net/content/dam/minecraft/pdp/java/Explore.png"
+      />
+      <footer>&copy; <i>Xander</i> 2020</footer>
+    </div>
+  </body>
+</html>

@@ -10,74 +10,159 @@
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(61, 61, 61);
       }
-
-      .navbar {
-        overflow: hidden;
-        background-color: #333;
+      .pagediv {
+        border: 1px solid;
+        box-shadow: 5px 10px rgb(46, 46, 46);
+        width: fit-content;
+        display: inline-block;
+        padding: 10px;
+        margin-left: 30px;
       }
-
-      .navbar a {
-        float: left;
-        font-size: 16px;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
+      #contentcontainer {
+        margin-top: 10px;
+        vertical-align: top;
+      }
+      a {
         text-decoration: none;
+        color: black;
+      }
+      #contentcontainer,
+      #navigation {
+        display: inline-block;
+      }
+      #navigation {
+        background-color: rgb(43, 43, 43);
+        height: 100vh;
+        width: 3cm;
+      }
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      footer {
+        padding-top: 20px;
+      }
+    </style>
+    <style>
+      /* styling navlist */
+      #navlist {
+        background-color: #0074d9;
+        position: absolute;
+        width: 100%;
+      }
+
+      /* styling navlist anchor element */
+      #navlist a {
+        float: left;
+        display: block;
+        color: rgb(54, 54, 54);
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 15px;
+      }
+      .navlist-right {
+        float: right;
+      }
+
+      /* hover effect of navlist anchor element */
+      #navlist a:hover {
+        background-color: rgb(54, 54, 54);
+        color: black;
+      }
+
+      /* styling search bar */
+      .search input[type="text"] {
+        width: 300px;
+        height: 25px;
+        border-radius: 25px;
+        border: none;
+      }
+
+      .search {
+        float: right;
+        margin: 7px;
+      }
+
+      .search button {
+        background-color: #0074d9;
+        color: rgb(0, 0, 0);
+        float: right;
+        padding: 5px 10px;
+        margin-right: 16px;
+        font-size: 12px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropbtn {
+        background-color: rgb(54, 54, 54);
+        color: rgb(0, 0, 0);
+        padding: 2px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+      }
+      i {
+        display: inline-block;
+      }
+      .dropbtn:hover,
+      .dropbtn:focus {
+        background-color: rgb(49, 49, 49);
+      }
+
+      #myInput {
+        box-sizing: border-box;
+        background-image: url("searchicon.png");
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 2px;
+        border: none;
+        border-bottom: 1px solid rgb(54, 54, 54);
+        background-color: rgb(58, 58, 58);
+      }
+
+      #myInput:focus {
+        outline: 3px solid rgb(54, 54, 54);
       }
 
       .dropdown {
-        float: left;
-        overflow: hidden;
-      }
-
-      .dropdown .dropbtn {
-        font-size: 16px;
-        border: none;
-        outline: none;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-      }
-
-      .navbar a:hover,
-      .dropdown:hover .dropbtn {
-        background-color: red;
+        position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        background-color: rgb(54, 54, 54);
+        width: 100px;
+        height: 25vh;
+        overflow: hidden;
+        border: 1px solid rgb(54, 54, 54);
         z-index: 1;
       }
 
       .dropdown-content a {
-        float: none;
         color: black;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
-        text-align: left;
       }
 
-      .dropdown-content a:hover {
-        background-color: #ddd;
+      .dropdown a:hover {
+        background-color: rgb(54, 54, 54);
       }
 
-      .dropdown:hover .dropdown-content {
+      .show {
         display: block;
       }
-      #ablockquote {
-        box-shadow: 10px 10px 30px gray;
-        background-color: purple;
-      }
-      .hidden {
-        display: none;
+      .websitelink {
+        display: inline-block;
+        margin-top: 10px;
       }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -88,42 +173,115 @@
     <script src="./index.js"></script>
   </head>
   <body>
-    <div id="hidden">
-      <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="https://github.com/XanderG2/xander.thegillams.co.uk"
-          >Latest on github</a
-        >
-        <div class="dropdown">
-          <button class="dropbtn">
-            Other pages
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="pages.html">Pages</a>
-            <!--not done yet will liknk xanderfence when done though-->
-            <a href=">#">Xandefence</a>
-            <a href="http://zack.thegillams.co.uk/">Zacks website</a>
-            <a href="https://zackxander.github.io">Shared website</a>
-          </div>
+    <div id="navigation">
+      <i class="fa fa-search"></i>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Search</button>
+        <div id="myDropdown" class="dropdown-content">
+          <input
+            type="text"
+            placeholder="Search.."
+            id="myInput"
+            onkeyup="filterFunction()"
+          />
+          <a href="index.html">index</a>
+          <a href="aboutStuff\about.html">about me</a>
+          <a href="firsfarm.html">firs farm 2017</a>
+          <a href="number_sentences.html">number sentences</a>
+          <a href="titanic.html">titanic</a>
+          <a href="b.html">io games i play</a>
+          <a href="ijno.html">ijno</a>
+          <a href="rectangle.html">rectangle</a>
+          <a href="svg.svg">learning svg</a>
+          <a href="svg2.svg">2nd page on svg</a>
+          <a href="man.svg">man</a>
+          <a href="creeper.svg">creeper</a>
+          <a href="house.svg">house with twinkling stars</a>
+          <a href="rainbow.svg">dissapearing rainbow</a>
+          <a href="shapes.svg">shapes</a>
+          <a href="smiling_heart.svg">smiling heart</a>
+          <a href="aboutStuff/allabouttheFibonacciSequence.html"
+            >Fibonnacci sequence</a
+          >
+          <a href="aboutStuff/minecraft/gillam.html">Gillam 1</a>
+          <a href="naughts_and_crosses">naughts and crosses</a>
+          <a href="floss.svg">floss</a>
+          <a href="logos.html">google logo</a>
+          <a href="otherLogos\Yt.html">youTube logo</a>
+          <a href="insta.html">instagram logo</a>
+          <a href="background_switcher.html">colour changer</a>
+          <a href="path_Gillam_Zack_Xander.svg"
+            >a line getting bigger and smaller</a
+          >
+          <a href="underpants.html">captain underpants story</a>
+          <a href="buttonCountThingAngularJS.html">try to get to 1000 clicks</a>
+          <a href="chicken.svg">a chicken (Zack insisted)</a>
+          <a href="happyFarthersDayDad.html">Farthers day 2019</a>
+          <a href="recursive.html">Testing</a>
+          <a href="moretesting.html">More testing</a>
+          <a href="tens.html">tens</a>
+          <a href="DiceThrows.html">100 dice throws</a>
+          <a href="draggable.html">draggable</a>
+          <a href="chickenTwo.svg">Real Chicken</a>
+          <a href="userStuff/usersignin.html">Sign In</a>
+          <a href="Game.html">Flappy Bird</a>
+          <a href="Pong/Pong.html">Pong</a>
+          <a href="calc.html">calculator</a>
+          <a href="calcTwo.html">advanced calculator</a>
         </div>
+        <a class="websitelink" href="http://zack.thegillams.co.uk/"
+          >Zacks website</a
+        >
+        <a class="websitelink" href="https://zackxander.github.io"
+          >Shared website</a
+        >
       </div>
 
-      <br />
+      <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-      <br />
-      <i>
-        <a href="UserStuffExclusive/usersignin.html">
-          Sign up for <i><b>Exclusive</b></i> Content.
-        </a>
-      </i>
-      <h1>Hello, my name is xander</h1>
-      <img
-        width="850px"
-        height="500px"
-        src="https://www.minecraft.net/content/dam/minecraft/pdp/java/Explore.png"
-      />
-      <footer>&copy; <i>Xander</i> 2020</footer>
+        function filterFunction() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          div = document.getElementById("myDropdown");
+          a = div.getElementsByTagName("a");
+          for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+      </script>
+    </div>
+    <div id="contentcontainer">
+      <a href="pages.html">
+        <div id="pagesdiv" class="pagediv">
+          <h2>Pages</h2>
+          <p>
+            Explore all the pages that <br />
+            I have made from just 1 <br />
+            searchbox.
+          </p>
+        </div>
+      </a>
+      <a href="Xanderblox/index.html">
+        <div id="xanderbloxdiv" class="pagediv">
+          <h2>Xanderblox</h2>
+          <p>
+            I try to make a page close <br />
+            to ROBLOX.
+          </p>
+        </div>
+      </a>
+      <footer>&copy; <i>Xander</i> 2021</footer>
     </div>
   </body>
 </html>
