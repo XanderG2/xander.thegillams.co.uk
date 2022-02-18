@@ -1,5 +1,11 @@
 const menu = document.getElementById("menu");
 const menubutton = document.getElementById("menubutton");
+let visible = false;
 menubutton.onclick = () => {
-  menu.style.display = "block";
+  visible = !visible;
+  if (visible) {
+    menu.style.display = "block";
+  } else {
+    menu.style.display = "none";
+  }
 };
