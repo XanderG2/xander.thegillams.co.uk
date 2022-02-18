@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lettersearch</title>
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" id="ipt" autocomplete="off" />
+    </form>
+
+    <textarea name="txtarea" id="txtarea"></textarea>
+
+    <form id="formSettings">
+      <h2>Repeats?</h2>
+      <input type="radio" id="rt" name="repeats" value="True" checked />
+      <label for="rt">True</label>
+      <input type="radio" id="rf" name="repeats" value="False" />
+      <label for="rf">False</label>
+
+      <br />
+      <h2>Colours?</h2>
+      <input type="number" id="cipt" value="8" />
+      <br />
+      <h2>Width?</h2>
+      <input type="number" id="wipt" value="5" />
+      <br />
+      <h2>Blacks in the Right Places?</h2>
+      <input type="radio" id="birpt" name="birp" value="True" checked />
+      <label for="birpt">True</label>
+      <input type="radio" id="birpf" name="birp" value="False" />
+      <label for="birpf">False</label>
+      <br />
+      <h2>Turn Limit?</h2>
+      <input type="number" id="tl" value="30" />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
