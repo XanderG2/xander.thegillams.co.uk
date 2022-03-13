@@ -25,13 +25,30 @@ function log(text) {
   txtarea.value = text + "\n" + txtarea.value;
 }
 
-let allowedletters = letters.substring(0, colors);
-for (let i = 0; i < width; i++) {
-  const idx = Math.floor(Math.random() * allowedletters.length);
-  pattern = pattern + allowedletters[idx];
+function generatePattern() {
+  log(
+    "ACTUAL VALUES TESTING: " +
+      "Repeats: " +
+      repeats +
+      ", Colours: " +
+      colors +
+      ", Width: " +
+      width +
+      ", Blacks in the Right Places: " +
+      BIRP +
+      ", Turn Limit: " +
+      turnLimit +
+      "."
+  );
+  pattern = "";
+  let allowedletters = letters.substring(0, colors);
+  for (let i = 0; i < width; i++) {
+    const idx = Math.floor(Math.random() * allowedletters.length);
+    pattern = pattern + allowedletters[idx];
+  }
+  console.log(pattern);
+  log("Test");
 }
-console.log(pattern);
-log("Test");
 
 function submitGuess(event) {
   event.preventDefault();
@@ -110,7 +127,16 @@ function submitSettings(event) {
       tl.value +
       "."
   );
+  repeats =
+    document.querySelector('input[name="repeats"]:checked').value === "True";
+  colors = parseInt(cipt.value, 10);
+  width = parseInt(wipt.value, 10);
+  BIRP =
+    document.querySelector('input[name="repeats"]:checked').value === "True9";
+  turnLimit = parseInt(tl.value, 10);
+  generatePattern();
 }
+
 function Gameready(event) {
   event.preventDefault();
   generatePattern();
@@ -120,3 +146,4 @@ form.onsubmit = submitGuess;
 formSettings.onsubmit = submitSettings;
 
 console.log("working");
+window.addEventListener("DOMContentLoaded", Gameready);
