@@ -95,3 +95,4 @@ window.addEventListener("mousemove", mousemove);
 window.addEventListener("mousedown", mousedown);
 window.addEventListener("mouseup", mouseup);
 window.addEventListener("wheel", wheel);
+window.addEventListener("resize", render);
