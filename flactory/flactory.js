@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
 let canvas;
+let ironimg;
 let map;
-let x = 2;
-let y = 2;
+let x = 0;
+let y = 0;
 let zoom = 1;
 const MAXZOOM = 3;
 const MINZOOM = 0.25;
@@ -25,11 +26,23 @@ const LIMESTONE = 3;
 
 function start() {
   canvas = document.getElementById("canvas");
-  init();
+  ironimg = document.getElementById("iron");
+  try {
+    x = parseFloat(localStorage.getItem("x")) || 0;
+    y = parseFloat(localStorage.getItem("y")) || 0;
+    zoom = parseFloat(localStorage.getItem("zoom")) || 1;
+    map = JSON.parse(localStorage.getItem("map"));
+    if (!map) {
+      throw new Error("Error 2: No map!");
+    }
+  } catch (e) {
+    generateMap();
+  }
+
   render();
 }
 
-function init() {
+function generateMap() {
   map = {};
   for (let mx = MINX; mx <= MAXX; mx++) {
     map[mx] = {};
@@ -41,6 +54,7 @@ function init() {
   assignResources(IRON, Math.floor(IRONPERCENT * SQUARES));
   assignResources(COPPER, Math.floor(COPPERPERCENT * SQUARES));
   assignResources(LIMESTONE, Math.floor(LIMESTONEPERCENT * SQUARES));
+  localStorage.setItem("map", JSON.stringify(map));
 }
 
 function assignResources(resource, quantity) {
@@ -82,7 +96,9 @@ function size() {
 }
 
 function render() {
-  let $ = canvas.getContext("2d");
+  const $ = canvas.getContext("2d");
+  $.imageSmoothingEnabled = false;
+  $.webkitImageSmoothingEnabled = false;
 
   canvas.width = window.innerWidth;
 
@@ -93,7 +109,7 @@ function render() {
   const bottom = Math.floor(y - NORMALTILESTOSHOW / zoom / 2);
   const numberoftiles = Math.ceil(NORMALTILESTOSHOW / zoom + 2);
   console.log(left, bottom);
-  $.fillStyle = "#00AA00";
+  $.fillStyle = "#53f250";
   $.fillRect(0, 0, canvas.width, canvas.height);
 
   for (let a = 0; a < numberoftiles; a++) {
@@ -107,20 +123,24 @@ function render() {
         continue;
       }
       //const c = (((tX + tY) % 3) + 3) % 3;
-      const c = map[tX][tY] - 1;
-      $.fillStyle =
-        //tX === 0 && tY === 0
-        c === -1
-          ? `rgb(255,255,255)`
-          : `rgb(${c === 0 ? 255 : 0}, ${c === 1 ? 255 : 0}, ${
-              c === 2 ? 255 : 0
-            })`;
-      $.fillRect(
-        xOffset + (tX - x) * tilesize,
-        yOffset + (tY - y) * tilesize,
-        tilesize,
-        -tilesize
-      );
+      const resource = map[tX][tY];
+
+      const cX = xOffset + (tX - x) * tilesize;
+      const cY = yOffset + (tY - y) * tilesize;
+      if (resource === IRON) {
+        $.drawImage(ironimg, cX, cY, tilesize, -tilesize);
+      } else if (resource === DIRT) {
+        //no thing
+      } else {
+        $.fillStyle =
+          //tX === 0 && tY === 0
+          resource === DIRT
+            ? `rgb(255,255,255)`
+            : `rgb(${resource === IRON ? 255 : 0}, ${
+                resource === COPPER ? 255 : 0
+              }, ${resource === LIMESTONE ? 255 : 0})`;
+        $.fillRect(cX, cY, tilesize, -tilesize);
+      }
     }
   }
 }
@@ -141,6 +161,8 @@ function mousemove(event) {
     y -= ydif / tilesize;
     x = Math.max(MINX, Math.min(MAXX, x));
     y = Math.max(MINY, Math.min(MAXY, y));
+    localStorage.setItem("x", x);
+    localStorage.setItem("y", y);
     render();
     //console.log(event);
   }
@@ -163,6 +185,8 @@ function wheel(event) {
   } else if (event.deltaY < 0) {
     zoom = Math.min(MAXZOOM, Math.max(MINZOOM, zoom * 1.25));
   }
+  localStorage.setItem("zoom", zoom);
+
   render();
 }
 window.addEventListener("DOMContentLoaded", start);
