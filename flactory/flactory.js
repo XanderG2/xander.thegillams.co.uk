@@ -53,9 +53,24 @@ function putresource(resource) {
   for (let attempt = 0; attempt < 100; attempt++) {
     const rX = Math.floor(Math.random() * (MAXX - MINX + 1)) + MINX;
     const rY = Math.floor(Math.random() * (MAXY - MINY + 1)) + MINY;
+    let OK = true;
+    for (let offset = -4; offset <= 4; offset++) {
+      const oY = rY + offset;
+      if (oY < MINY || oY > MAXY) {
+        continue;
+      }
+      if (map[rX][oY] != DIRT) {
+        OK = false;
+        break;
+      }
+    }
+    if (!OK) {
+      continue;
+    }
     map[rX][rY] = resource;
     return;
   }
+  throw new Error("Error 1: Couldn't find space for resource");
 }
 
 function size() {
