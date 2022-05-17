@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 let canvas;
+let map;
 let x = 2;
 let y = 2;
 let zoom = 1;
@@ -12,9 +13,49 @@ const MAXX = WORLDSIZE;
 const MINY = -WORLDSIZE;
 const MAXY = WORLDSIZE;
 
+const SQUARES = (MAXX - MINX + 1) * (MAXY - MINY + 1);
+const IRONPERCENT = 1 / 100;
+const COPPERPERCENT = 1 / 350;
+const LIMESTONEPERCENT = 1 / 105;
+
+const DIRT = 0;
+const IRON = 1;
+const COPPER = 2;
+const LIMESTONE = 3;
+
 function start() {
   canvas = document.getElementById("canvas");
+  init();
   render();
+}
+
+function init() {
+  map = {};
+  for (let mx = MINX; mx <= MAXX; mx++) {
+    map[mx] = {};
+    for (let my = MINY; my <= MAXY; my++) {
+      map[mx][my] = DIRT;
+    }
+  }
+
+  assignResources(IRON, Math.floor(IRONPERCENT * SQUARES));
+  assignResources(COPPER, Math.floor(COPPERPERCENT * SQUARES));
+  assignResources(LIMESTONE, Math.floor(LIMESTONEPERCENT * SQUARES));
+}
+
+function assignResources(resource, quantity) {
+  for (let i = 0; i < quantity; i++) {
+    putresource(resource);
+  }
+}
+
+function putresource(resource) {
+  for (let attempt = 0; attempt < 100; attempt++) {
+    const rX = Math.floor(Math.random() * (MAXX - MINX + 1)) + MINX;
+    const rY = Math.floor(Math.random() * (MAXY - MINY + 1)) + MINY;
+    map[rX][rY] = resource;
+    return;
+  }
 }
 
 function size() {
@@ -50,9 +91,11 @@ function render() {
       if (tY < MINY || tY > MAXY) {
         continue;
       }
-      const c = (((tX + tY) % 3) + 3) % 3;
+      //const c = (((tX + tY) % 3) + 3) % 3;
+      const c = map[tX][tY] - 1;
       $.fillStyle =
-        tX === 0 && tY === 0
+        //tX === 0 && tY === 0
+        c === -1
           ? `rgb(255,255,255)`
           : `rgb(${c === 0 ? 255 : 0}, ${c === 1 ? 255 : 0}, ${
               c === 2 ? 255 : 0
