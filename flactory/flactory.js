@@ -39,9 +39,12 @@ function render() {
       const tX = a + left;
       const tY = b + bottom;
       const c = (((tX + tY) % 3) + 3) % 3;
-      $.fillStyle = `rgb(${c === 0 ? 255 : 0}, ${c === 1 ? 255 : 0}, ${
-        c === 2 ? 255 : 0
-      })`;
+      $.fillStyle =
+        tX === 0 && tY === 0
+          ? `rgb(255,255,255)`
+          : `rgb(${c === 0 ? 255 : 0}, ${c === 1 ? 255 : 0}, ${
+              c === 2 ? 255 : 0
+            })`;
       $.fillRect(
         xOffset + (tX - x) * tilesize,
         yOffset + (tY - y) * tilesize,
