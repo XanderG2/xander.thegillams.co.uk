@@ -6,6 +6,12 @@ let zoom = 1;
 const MAXZOOM = 3;
 const MINZOOM = 0.25;
 const NORMALTILESTOSHOW = 10;
+const WORLDSIZE = 50;
+const MINX = -WORLDSIZE;
+const MAXX = WORLDSIZE;
+const MINY = -WORLDSIZE;
+const MAXY = WORLDSIZE;
+
 function start() {
   canvas = document.getElementById("canvas");
   render();
@@ -35,9 +41,15 @@ function render() {
   $.fillRect(0, 0, canvas.width, canvas.height);
 
   for (let a = 0; a < numberoftiles; a++) {
+    const tX = a + left;
+    if (tX < MINX || tX > MAXX) {
+      continue;
+    }
     for (let b = 0; b < numberoftiles; b++) {
-      const tX = a + left;
       const tY = b + bottom;
+      if (tY < MINY || tY > MAXY) {
+        continue;
+      }
       const c = (((tX + tY) % 3) + 3) % 3;
       $.fillStyle =
         tX === 0 && tY === 0
@@ -69,6 +81,8 @@ function mousemove(event) {
     const { tilesize } = size();
     x -= xdif / tilesize;
     y -= ydif / tilesize;
+    x = Math.max(MINX, Math.min(MAXX, x));
+    y = Math.max(MINY, Math.min(MAXY, y));
     render();
     //console.log(event);
   }
