@@ -1,10 +1,18 @@
 /* eslint-disable no-console */
 let canvas;
 let ironimg;
+let ironno;
+let copperno;
+let limestoneno;
 let map;
 let x = 0;
 let y = 0;
 let zoom = 1;
+let iron = 0;
+let copper = 0;
+let limestone = 0;
+let dx = 0,
+  dy = 0;
 const MAXZOOM = 3;
 const MINZOOM = 0.25;
 const NORMALTILESTOSHOW = 10;
@@ -24,21 +32,42 @@ const IRON = 1;
 const COPPER = 2;
 const LIMESTONE = 3;
 
-function start() {
-  canvas = document.getElementById("canvas");
-  ironimg = document.getElementById("iron");
+function save() {
+  localStorage.setItem("x", x);
+  localStorage.setItem("y", y);
+  localStorage.setItem("zoom", zoom);
+  localStorage.setItem("map", JSON.stringify(map));
+  localStorage.setItem("iron", iron);
+  localStorage.setItem("copper", copper);
+  localStorage.setItem("limestone", limestone);
+}
+function load() {
   try {
     x = parseFloat(localStorage.getItem("x")) || 0;
     y = parseFloat(localStorage.getItem("y")) || 0;
     zoom = parseFloat(localStorage.getItem("zoom")) || 1;
     map = JSON.parse(localStorage.getItem("map"));
-    if (!map) {
-      throw new Error("Error 2: No map!");
-    }
+    iron = parseInt(localStorage.getItem("iron"), 10) || 0;
+    copper = parseInt(localStorage.getItem("copper"), 10) || 0;
+    limestone = parseInt(localStorage.getItem("limestone"), 10) || 0;
   } catch (e) {
+    x = 0;
+    y = 0;
+    zoom = 1;
+  }
+}
+
+function start() {
+  canvas = document.getElementById("canvas");
+  ironimg = document.getElementById("iron");
+  ironno = document.getElementById("ironno");
+  copperno = document.getElementById("copperno");
+  limestoneno = document.getElementById("limestoneno");
+  load();
+  if (!map) {
     generateMap();
   }
-
+  setInterval(save, 10000);
   render();
 }
 
@@ -54,7 +83,6 @@ function generateMap() {
   assignResources(IRON, Math.floor(IRONPERCENT * SQUARES));
   assignResources(COPPER, Math.floor(COPPERPERCENT * SQUARES));
   assignResources(LIMESTONE, Math.floor(LIMESTONEPERCENT * SQUARES));
-  localStorage.setItem("map", JSON.stringify(map));
 }
 
 function assignResources(resource, quantity) {
@@ -96,6 +124,10 @@ function size() {
 }
 
 function render() {
+  ironno.textContent = iron;
+  copperno.textContent = copper;
+  limestoneno.textContent = limestone;
+
   const $ = canvas.getContext("2d");
   $.imageSmoothingEnabled = false;
   $.webkitImageSmoothingEnabled = false;
@@ -141,6 +173,10 @@ function render() {
               }, ${resource === LIMESTONE ? 255 : 0})`;
         $.fillRect(cX, cY, tilesize, -tilesize);
       }
+      if (tX === dx && tY === dy) {
+        $.fillStyle = "rgba(255,255,255,0.3)";
+        $.fillRect(cX, cY, tilesize, -tilesize);
+      }
     }
   }
 }
@@ -161,8 +197,7 @@ function mousemove(event) {
     y -= ydif / tilesize;
     x = Math.max(MINX, Math.min(MAXX, x));
     y = Math.max(MINY, Math.min(MAXY, y));
-    localStorage.setItem("x", x);
-    localStorage.setItem("y", y);
+
     render();
     //console.log(event);
   }
@@ -185,7 +220,27 @@ function wheel(event) {
   } else if (event.deltaY < 0) {
     zoom = Math.min(MAXZOOM, Math.max(MINZOOM, zoom * 1.25));
   }
-  localStorage.setItem("zoom", zoom);
+
+  render();
+}
+function click(e) {
+  const { clientX, clientY } = e;
+  const { xOffset, yOffset, tilesize } = size();
+
+  const tX = Math.floor(clientX / tilesize - xOffset / tilesize + x);
+  const tY = Math.ceil(clientY / tilesize - yOffset / tilesize + y);
+  dx = tX;
+  dy = tY;
+  const resource = map[tX][tY];
+  if (resource === IRON) {
+    iron++;
+  }
+  if (resource === COPPER) {
+    copper++;
+  }
+  if (resource === LIMESTONE) {
+    limestone++;
+  }
 
   render();
 }
@@ -194,4 +249,6 @@ window.addEventListener("mousemove", mousemove);
 window.addEventListener("mousedown", mousedown);
 window.addEventListener("mouseup", mouseup);
 window.addEventListener("wheel", wheel);
+window.addEventListener("click", click);
 window.addEventListener("resize", render);
+window.addEventListener("beforeunload", save);
