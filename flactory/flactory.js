@@ -1,7 +1,11 @@
 /* eslint-disable no-console */
 let canvas;
 let ironimg;
+let copperimg;
+let limestoneimg;
 let minerMk1img;
+let minerMk2img;
+let foundationimg;
 let ironno;
 let copperno;
 let limestoneno;
@@ -43,8 +47,28 @@ const MACHINES = {
     amount: 1,
     iron: 100,
   },
+  minerMk2: {
+    type: "miner",
+    tickinterval: 2,
+    amount: 1,
+    iron: 1000,
+    copper: 100,
+  },
+  foundation: {
+    type: "building",
+    iron: 10,
+    limestone: 5,
+  },
 };
 
+/*const BUILDINGS = {
+  foundation: {
+    type: "foundation",
+    iron: 10,
+    limestone: 5,
+  },
+};
+*/
 function save() {
   localStorage.setItem("x", x);
   localStorage.setItem("y", y);
@@ -80,7 +104,11 @@ function load() {
 function start() {
   canvas = document.getElementById("canvas");
   ironimg = document.getElementById("iron");
+  copperimg = document.getElementById("copper");
+  limestoneimg = document.getElementById("limestone");
   minerMk1img = document.getElementById("minerMk1");
+  minerMk2img = document.getElementById("minerMk2");
+  foundationimg = document.getElementById("foundation");
   ironno = document.getElementById("ironno");
   copperno = document.getElementById("copperno");
   limestoneno = document.getElementById("limestoneno");
@@ -221,6 +249,10 @@ function render() {
 
       if (resource === IRON) {
         $.drawImage(ironimg, cX, cY, tilesize, -tilesize);
+      } else if (resource === COPPER) {
+        $.drawImage(copperimg, cX, cY, tilesize, -tilesize);
+      } else if (resource === LIMESTONE) {
+        $.drawImage(limestoneimg, cX, cY, tilesize, -tilesize);
       } else if (resource === DIRT) {
         //no thing
       } else {
@@ -236,6 +268,10 @@ function render() {
 
       if (machineid === "minerMk1") {
         $.drawImage(minerMk1img, cX, cY, tilesize, -tilesize);
+      } else if (machineid === "minerMk2") {
+        $.drawImage(minerMk2img, cX, cY, tilesize, -tilesize);
+      } else if (machineid === "foundation") {
+        $.drawImage(foundationimg, cX, cY, tilesize, -tilesize);
       }
 
       if (tX === dx && tY === dy) {
