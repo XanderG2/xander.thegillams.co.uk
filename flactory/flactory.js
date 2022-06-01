@@ -45,12 +45,14 @@ const LIMESTONE = 3;
 const MACHINES = {
   minerMk1: {
     type: "miner",
+    btnlbl: "mk1",
     tickinterval: 4,
     amount: 1,
     iron: 100,
   },
   minerMk2: {
     type: "miner",
+    btnlbl: "mk2",
     tickinterval: 2,
     amount: 1,
     iron: 1000,
@@ -61,6 +63,7 @@ const MACHINES = {
 const FOUNDATIONS = {
   gray: {
     type: "gray",
+    btnlbl: "fg",
     iron: 10,
     limestone: 5,
   },
@@ -356,6 +359,33 @@ function click(e) {
 
   render();
 }
+
+function menubutton(action, text, disabled) {
+  const el = document.createElement("button");
+  el.onclick = () => button(action);
+  el.innerText = text;
+  if (disabled) {
+    el.disabled = true;
+  }
+  contextdenu.appendChild(el);
+}
+function canafford(thing, oldthing) {
+  const effectiveiron = iron + (oldthing ? oldthing.iron || 0 : 0);
+  const effectivecopper = copper + (oldthing ? oldthing.copper || 0 : 0);
+  const effectivelimestone =
+    limestone + (oldthing ? oldthing.limestone || 0 : 0);
+  if (thing.iron && effectiveiron < thing.iron) {
+    return false;
+  }
+  if (thing.copper && effectivecopper < thing.copper) {
+    return false;
+  }
+  if (thing.limestone && effectivelimestone < thing.limestone) {
+    return false;
+  }
+  return true;
+}
+
 function contextmenu(e) {
   e.preventDefault();
   const { tX, tY, clientX, clientY } = mouse2tile(e);
@@ -365,6 +395,33 @@ function contextmenu(e) {
   console.log(tX, tY);
   contextdenu.style.left = `${clientX}px`;
   contextdenu.style.top = `${clientY}px`;
+  contextdenu.innerHTML = "";
+
+  menubutton("x", "x");
+  menubutton("-", "-");
+
+  for (const machineid in MACHINES) {
+    if (ismachineallowed(machineid, tX, tY)) {
+      const machine = MACHINES[machineid];
+
+      const oldmachine = MACHINES[buildingmap[dx][dy]];
+      const disabled =
+        buildingmap[tX][tY] === machineid || !canafford(machine, oldmachine);
+      menubutton(machineid, machine.btnlbl, disabled);
+    }
+  }
+  for (const foundationid in FOUNDATIONS) {
+    if (isfoundationallowed(foundationid, tX, tY)) {
+      const foundation = FOUNDATIONS[foundationid];
+      const oldfoundation = FOUNDATIONS[foundationmap[dx][dy]];
+
+      const disabled =
+        foundationmap[tX][tY] === foundationid ||
+        !canafford(foundation, oldfoundation);
+
+      menubutton(foundationid, foundation.btnlbl, disabled);
+    }
+  }
   contextdenu.style.display = `block`;
 }
 
@@ -430,32 +487,35 @@ function button(l) {
       foundationmap[dx][dy] = null;
     }
   } else if (machine) {
-    try {
-      if (oldmachine) {
-        credit(oldmachine);
+    if (ismachineallowed(l, dx, dy)) {
+      try {
+        if (oldmachine) {
+          credit(oldmachine);
+        }
+        credit(machine, -1);
+        buildingmap[dx][dy] = l;
+      } catch (e) {
+        if (oldmachine) {
+          credit(oldmachine, -1);
+        }
+        console.error(e);
       }
-      credit(machine, -1);
-    } catch (e) {
-      if (oldmachine) {
-        credit(oldmachine, -1);
-      }
-      console.error(e);
     }
-
-    buildingmap[dx][dy] = l;
   } else if (foundation) {
-    try {
-      if (oldfoundation) {
-        credit(oldfoundation);
+    if (isfoundationallowed(l, dx, dy)) {
+      try {
+        if (oldfoundation) {
+          credit(oldfoundation);
+        }
+        credit(foundation, -1);
+        foundationmap[dx][dy] = l;
+      } catch (e) {
+        if (oldfoundation) {
+          credit(oldfoundation, -1);
+        }
+        console.error(e);
       }
-      credit(foundation, -1);
-    } catch (e) {
-      if (oldfoundation) {
-        credit(oldfoundation, -1);
-      }
-      console.error(e);
     }
-    foundationmap[dx][dy] = l;
   }
   contextdenu.style.display = `none`;
 }
