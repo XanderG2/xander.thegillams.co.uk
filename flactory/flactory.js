@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+//foundationmap
 let canvas;
 let ironimg;
 let copperimg;
@@ -10,7 +11,8 @@ let ironno;
 let copperno;
 let limestoneno;
 let map;
-let stuffmap;
+let buildingmap;
+let foundationmap;
 let contextdenu;
 let x = 0;
 let y = 0;
@@ -54,27 +56,22 @@ const MACHINES = {
     iron: 1000,
     copper: 100,
   },
-  foundation: {
-    type: "building",
-    iron: 10,
-    limestone: 5,
-  },
 };
 
-/*const BUILDINGS = {
-  foundation: {
-    type: "foundation",
+const FOUNDATIONS = {
+  gray: {
+    type: "gray",
     iron: 10,
     limestone: 5,
   },
 };
-*/
 function save() {
   localStorage.setItem("x", x);
   localStorage.setItem("y", y);
   localStorage.setItem("zoom", zoom);
   localStorage.setItem("map", JSON.stringify(map));
-  localStorage.setItem("stuffmap", JSON.stringify(stuffmap));
+  localStorage.setItem("buildingmap", JSON.stringify(buildingmap));
+  localStorage.setItem("foundationmap", JSON.stringify(foundationmap));
   localStorage.setItem("iron", iron);
   localStorage.setItem("copper", copper);
   localStorage.setItem("limestone", limestone);
@@ -88,7 +85,8 @@ function load() {
     copper = parseInt(localStorage.getItem("copper"), 10) || 0;
     limestone = parseInt(localStorage.getItem("limestone"), 10) || 0;
     map = JSON.parse(localStorage.getItem("map"));
-    stuffmap = JSON.parse(localStorage.getItem("stuffmap"));
+    buildingmap = JSON.parse(localStorage.getItem("buildingmap"));
+    foundationmap = JSON.parse(localStorage.getItem("foundationmap"));
   } catch (e) {
     x = 0;
     y = 0;
@@ -97,7 +95,8 @@ function load() {
     copper = 0;
     limestone = 0;
     map = null;
-    stuffmap = null;
+    buildingmap = null;
+    foundationmap = null;
   }
 }
 
@@ -114,7 +113,7 @@ function start() {
   limestoneno = document.getElementById("limestoneno");
   contextdenu = document.getElementById("contextmenu");
   load();
-  if (!map || !stuffmap) {
+  if (!map || !buildingmap || !foundationmap) {
     generateMap();
   }
   setInterval(save, 10000);
@@ -126,7 +125,7 @@ function tick() {
   ticknumber++;
   for (let mx = MINX; mx <= MAXX; mx++) {
     for (let my = MINY; my <= MAXY; my++) {
-      const machineid = stuffmap[mx][my];
+      const machineid = buildingmap[mx][my];
       const resource = map[mx][my];
       const machine = MACHINES[machineid];
       if (machine) {
@@ -157,13 +156,16 @@ function generateMap() {
   limestone = 0;
 
   map = {};
-  stuffmap = {};
+  buildingmap = {};
+  foundationmap = {};
   for (let mx = MINX; mx <= MAXX; mx++) {
     map[mx] = {};
-    stuffmap[mx] = {};
+    buildingmap[mx] = {};
+    foundationmap[mx] = {};
     for (let my = MINY; my <= MAXY; my++) {
       map[mx][my] = DIRT;
-      stuffmap[mx][my] = null;
+      buildingmap[mx][my] = null;
+      foundationmap[mx][my] = null;
     }
   }
 
@@ -242,7 +244,8 @@ function render() {
       }
       //const c = (((tX + tY) % 3) + 3) % 3;
       const resource = map[tX][tY];
-      const machineid = stuffmap[tX][tY];
+      const machineid = buildingmap[tX][tY];
+      const foundationid = foundationmap[tX][tY];
 
       const cX = xOffset + (tX - x) * tilesize;
       const cY = yOffset + (tY - y) * tilesize;
@@ -266,12 +269,14 @@ function render() {
         $.fillRect(cX, cY, tilesize, -tilesize);
       }
 
+      if (foundationid === "gray") {
+        $.drawImage(foundationimg, cX, cY, tilesize, -tilesize);
+      }
+
       if (machineid === "minerMk1") {
         $.drawImage(minerMk1img, cX, cY, tilesize, -tilesize);
       } else if (machineid === "minerMk2") {
         $.drawImage(minerMk2img, cX, cY, tilesize, -tilesize);
-      } else if (machineid === "foundation") {
-        $.drawImage(foundationimg, cX, cY, tilesize, -tilesize);
       }
 
       if (tX === dx && tY === dy) {
@@ -393,21 +398,49 @@ function button(l) {
     contextdenu.style.display = `none`;
     return;
   }
+
   const machine = MACHINES[l];
+  const foundation = FOUNDATIONS[l];
+  let removed = false;
 
-  if (stuffmap[dx][dy]) {
-    const oldmachine = MACHINES[stuffmap[dx][dy]];
-    if (oldmachine) {
-      credit(oldmachine);
+  //if u select a machine or delete, remove existing machine
+  if (machine || l === "-") {
+    if (buildingmap[dx][dy]) {
+      const oldmachine = MACHINES[buildingmap[dx][dy]];
+      if (oldmachine) {
+        credit(oldmachine);
+        removed = true;
+      }
+
+      buildingmap[dx][dy] = null;
     }
-
-    stuffmap[dx][dy] = null;
   }
+  if (foundation || (l === "-" && !removed)) {
+    if (foundationmap[dx][dy]) {
+      const oldfoundation = FOUNDATIONS[foundationmap[dx][dy]];
+      if (oldfoundation) {
+        credit(oldfoundation);
+        removed = true;
+      }
+
+      foundationmap[dx][dy] = null;
+    }
+  }
+
   if (machine) {
     try {
       credit(machine, -1);
 
-      stuffmap[dx][dy] = l;
+      buildingmap[dx][dy] = l;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  if (foundation) {
+    try {
+      credit(foundation, -1);
+
+      foundationmap[dx][dy] = l;
     } catch (e) {
       console.error(e);
     }
