@@ -419,49 +419,43 @@ function button(l) {
 
   const machine = MACHINES[l];
   const foundation = FOUNDATIONS[l];
-  let removed = false;
-
-  //if u select a machine or delete, remove existing machine
-  if (machine || l === "-") {
-    if (buildingmap[dx][dy]) {
-      const oldmachine = MACHINES[buildingmap[dx][dy]];
-      if (oldmachine) {
-        credit(oldmachine);
-        removed = true;
-      }
-
+  const oldmachine = MACHINES[buildingmap[dx][dy]];
+  const oldfoundation = FOUNDATIONS[foundationmap[dx][dy]];
+  if (l === "-") {
+    if (oldmachine) {
+      credit(oldmachine);
       buildingmap[dx][dy] = null;
-    }
-  }
-  if (foundation || (l === "-" && !removed)) {
-    if (foundationmap[dx][dy]) {
-      const oldfoundation = FOUNDATIONS[foundationmap[dx][dy]];
-      if (oldfoundation) {
-        credit(oldfoundation);
-        removed = true;
-      }
-
+    } else if (oldfoundation) {
+      credit(oldfoundation);
       foundationmap[dx][dy] = null;
     }
-  }
-
-  if (machine) {
+  } else if (machine) {
     try {
+      if (oldmachine) {
+        credit(oldmachine);
+      }
       credit(machine, -1);
-
-      buildingmap[dx][dy] = l;
     } catch (e) {
+      if (oldmachine) {
+        credit(oldmachine, -1);
+      }
       console.error(e);
     }
-  }
-  if (foundation) {
+
+    buildingmap[dx][dy] = l;
+  } else if (foundation) {
     try {
+      if (oldfoundation) {
+        credit(oldfoundation);
+      }
       credit(foundation, -1);
-
-      foundationmap[dx][dy] = l;
     } catch (e) {
+      if (oldfoundation) {
+        credit(oldfoundation, -1);
+      }
       console.error(e);
     }
+    foundationmap[dx][dy] = l;
   }
   contextdenu.style.display = `none`;
 }
