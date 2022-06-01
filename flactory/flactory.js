@@ -392,6 +392,24 @@ function credit(machine, multiplier = 1) {
   }
 }
 
+function ismachineallowed(machineid, x, y) {
+  const machine = MACHINES[machineid];
+  if (machine.type === "miner") {
+    const resource = map[x][y];
+    return resource !== DIRT;
+  }
+  console.warn("machine is not understod");
+  return false;
+}
+
+function isfoundationallowed(foundationid, x, y) {
+  //const foundation = FOUNDATIONS[foundationid];
+  const existing = foundationmap[x][y];
+  const machine = buildingmap[x][y];
+  const resource = map[x][y];
+  return resource === DIRT && (existing || !machine);
+}
+
 // eslint-disable-next-line no-unused-vars
 function button(l) {
   if (l === "x") {
