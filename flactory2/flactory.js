@@ -332,6 +332,25 @@ function mouse2tile(e) {
   return { tX, tY, clientX, clientY };
 }
 
+function creditresource(itemid, amount) {
+  const item = ITEMS[itemid];
+  const index = inventory.findIndex(
+    v => v && v.item === itemid && v.amount < item.MaxStackSize
+  );
+  if (index < 0) {
+    const emptyindex = inventory.findIndex(v => !v);
+    if (emptyindex < 0) {
+      throw new Error("Error 3.14159: no space in inventory!");
+    } else {
+      inventory[emptyindex] = { amount, item: itemid };
+      renderinventoryslot(emptyindex);
+    }
+  } else {
+    inventory[index].amount = inventory[index].amount + amount;
+    renderinventoryslot(index);
+  }
+}
+
 function click(e) {
   const { tX, tY } = mouse2tile(e);
   dx = tX;
@@ -339,6 +358,7 @@ function click(e) {
   const resource = map[tX][tY];
   const resourcenode = RESOURCE_NODES[resource];
   if (resourcenode) {
+    creditresource(resourcenode.item, 1);
     console.log("get ", resourcenode.item);
   }
 
