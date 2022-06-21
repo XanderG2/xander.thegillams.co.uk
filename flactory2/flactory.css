@@ -21,6 +21,7 @@ body {
   width: 100%;
   height: 2em;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   background-color: #46e743;
@@ -31,4 +32,7 @@ body {
   left: 0;
   display: none;
   background: white;
+}
+#inventory > div {
+  border: 1px solid black;
 }

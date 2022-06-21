@@ -1,14 +1,18 @@
 import { MACHINES } from "./machines.js";
 import { FOUNDATIONS } from "./foundations.js";
 import { ITEMS } from "./items.js";
-
+import { RESOURCE_NODES } from "./resourcenodes.js";
+// the next thing to do is to create the inventory umm and then fix all the errors
 /* eslint-disable no-console */
 //foundationmap
 let canvas;
+let inventoryDiv;
 let map;
 let buildingmap;
 let foundationmap;
+/** @type {Array<null |{amount:number, item:string}>} */
 let inventory;
+const inventorydivs = [];
 let contextdenu;
 let x = 0;
 let y = 0;
@@ -26,55 +30,89 @@ const MINX = -WORLDSIZE;
 const MAXX = WORLDSIZE;
 const MINY = -WORLDSIZE;
 const MAXY = WORLDSIZE;
+const INVENTORYSIZE = 25;
 
 const SQUARES = (MAXX - MINX + 1) * (MAXY - MINY + 1);
 
 function save() {
+  if (!map) {
+    return;
+  }
   localStorage.setItem("x", x);
   localStorage.setItem("y", y);
   localStorage.setItem("zoom", zoom);
   localStorage.setItem("map", JSON.stringify(map));
   localStorage.setItem("buildingmap", JSON.stringify(buildingmap));
   localStorage.setItem("foundationmap", JSON.stringify(foundationmap));
-  localStorage.setItem("inventory", inventory);
+  localStorage.setItem("inventory", JSON.stringify(inventory));
 }
 function load() {
   try {
     x = parseFloat(localStorage.getItem("x")) || 0;
     y = parseFloat(localStorage.getItem("y")) || 0;
     zoom = parseFloat(localStorage.getItem("zoom")) || 1;
-    iron = parseInt(localStorage.getItem("iron"), 10) || 0;
-    copper = parseInt(localStorage.getItem("copper"), 10) || 0;
-    limestone = parseInt(localStorage.getItem("limestone"), 10) || 0;
     map = JSON.parse(localStorage.getItem("map"));
     buildingmap = JSON.parse(localStorage.getItem("buildingmap"));
     foundationmap = JSON.parse(localStorage.getItem("foundationmap"));
+    inventory = JSON.parse(localStorage.getItem("inventory"));
   } catch (e) {
     x = 0;
     y = 0;
     zoom = 1;
-    iron = 0;
-    copper = 0;
-    limestone = 0;
     map = null;
     buildingmap = null;
     foundationmap = null;
+    inventory = [];
   }
 }
 
 function start() {
   canvas = document.getElementById("canvas");
-  ironno = document.getElementById("ironno");
-  copperno = document.getElementById("copperno");
-  limestoneno = document.getElementById("limestoneno");
+  inventoryDiv = document.getElementById("inventory");
   contextdenu = document.getElementById("contextmenu");
   load();
-  if (!map || !buildingmap || !foundationmap) {
+  if (!map || !buildingmap || !foundationmap || !inventory) {
     generateMap();
   }
   setInterval(save, 10000);
   setInterval(tick, 250);
+  renderInventory();
   render();
+}
+
+const imagecache = {};
+let pendingImages = 0;
+function getimage(imagename) {
+  return imagecache[imagename];
+}
+function loadimage(url) {
+  if (!url) {
+    throw new Error("Error NaN:No URL");
+  }
+  if (imagecache[url]) {
+    return;
+  }
+  const image = new Image();
+  imagecache[url] = image;
+  pendingImages = pendingImages + 1;
+  image.onload = () => {
+    pendingImages = pendingImages - 1;
+    if (pendingImages === 0) {
+      start();
+    }
+  };
+  image.src = url;
+}
+function begin() {
+  for (const resourcenode of Object.values(RESOURCE_NODES)) {
+    loadimage(resourcenode.image);
+  }
+  for (const item of Object.values(ITEMS)) {
+    loadimage(item.Icon);
+  }
+  for (const foundation of Object.values(FOUNDATIONS)) {
+    loadimage(foundation.image);
+  }
 }
 
 function tick() {
@@ -107,9 +145,7 @@ function generateMap() {
   x = 0;
   y = 0;
   zoom = 1;
-  iron = 0;
-  copper = 0;
-  limestone = 0;
+  inventory = new Array(INVENTORYSIZE).fill(null);
 
   map = {};
   buildingmap = {};
@@ -119,20 +155,21 @@ function generateMap() {
     buildingmap[mx] = {};
     foundationmap[mx] = {};
     for (let my = MINY; my <= MAXY; my++) {
-      map[mx][my] = DIRT;
+      map[mx][my] = null;
       buildingmap[mx][my] = null;
       foundationmap[mx][my] = null;
     }
   }
 
-  assignResources(IRON, Math.floor(IRONPERCENT * SQUARES));
-  assignResources(COPPER, Math.floor(COPPERPERCENT * SQUARES));
-  assignResources(LIMESTONE, Math.floor(LIMESTONEPERCENT * SQUARES));
+  for (const resourcenode in RESOURCE_NODES) {
+    assignResources(resourcenode);
+  }
 }
 
-function assignResources(resource, quantity) {
+function assignResources(resourcenode) {
+  const quantity = Math.floor(RESOURCE_NODES[resourcenode].percent * SQUARES);
   for (let i = 0; i < quantity; i++) {
-    putresource(resource);
+    putresource(resourcenode);
   }
 }
 
@@ -146,7 +183,7 @@ function putresource(resource) {
       if (oY < MINY || oY > MAXY) {
         continue;
       }
-      if (map[rX][oY] != DIRT) {
+      if (map[rX][oY]) {
         OK = false;
         break;
       }
@@ -167,12 +204,25 @@ function size() {
   const tilesize = (screensize / NORMALTILESTOSHOW) * zoom;
   return { xOffset, yOffset, tilesize };
 }
-
+function renderInventory() {
+  for (let i = 0; i < inventory.length; i++) {
+    const div = document.createElement("div");
+    div.id = `inv_${i}`;
+    inventoryDiv.appendChild(div);
+    inventorydivs[i] = div;
+    renderinventoryslot(i);
+  }
+}
+function renderinventoryslot(i) {
+  const slotdiv = inventorydivs[i];
+  const slot = inventory[i];
+  if (slot) {
+    slotdiv.textContent = `${slot.amount} ${slot.item}`;
+  } else {
+    slotdiv.textContent = "x";
+  }
+}
 function render() {
-  ironno.textContent = iron;
-  copperno.textContent = copper;
-  limestoneno.textContent = limestone;
-
   const $ = canvas.getContext("2d");
   $.imageSmoothingEnabled = false;
   $.webkitImageSmoothingEnabled = false;
@@ -206,33 +256,20 @@ function render() {
       const cX = xOffset + (tX - x) * tilesize;
       const cY = yOffset + (tY - y) * tilesize;
 
-      if (resource === IRON) {
-        $.drawImage(ironimg, cX, cY, tilesize, -tilesize);
-      } else if (resource === COPPER) {
-        $.drawImage(copperimg, cX, cY, tilesize, -tilesize);
-      } else if (resource === LIMESTONE) {
-        $.drawImage(limestoneimg, cX, cY, tilesize, -tilesize);
-      } else if (resource === DIRT) {
-        //no thing
-      } else {
-        $.fillStyle =
-          //tX === 0 && tY === 0
-          resource === DIRT
-            ? `rgb(255,255,255)`
-            : `rgb(${resource === IRON ? 255 : 0}, ${
-                resource === COPPER ? 255 : 0
-              }, ${resource === LIMESTONE ? 255 : 0})`;
-        $.fillRect(cX, cY, tilesize, -tilesize);
+      const resourcenode = RESOURCE_NODES[resource];
+      const foundation = FOUNDATIONS[foundationid];
+      const machine = MACHINES[machineid];
+
+      if (resourcenode) {
+        $.drawImage(getimage(resourcenode.image), cX, cY, tilesize, -tilesize);
       }
 
-      if (foundationid === "gray") {
-        $.drawImage(foundationimg, cX, cY, tilesize, -tilesize);
+      if (foundation) {
+        $.drawImage(getimage(foundation.image), cX, cY, tilesize, -tilesize);
       }
 
-      if (machineid === "minerMk1") {
-        $.drawImage(minerMk1img, cX, cY, tilesize, -tilesize);
-      } else if (machineid === "minerMk2") {
-        $.drawImage(minerMk2img, cX, cY, tilesize, -tilesize);
+      if (machine) {
+        $.drawImage(getimage(machine.image), cX, cY, tilesize, -tilesize);
       }
 
       if (tX === dx && tY === dy) {
@@ -300,14 +337,9 @@ function click(e) {
   dx = tX;
   dy = tY;
   const resource = map[tX][tY];
-  if (resource === IRON) {
-    iron++;
-  }
-  if (resource === COPPER) {
-    copper++;
-  }
-  if (resource === LIMESTONE) {
-    limestone++;
+  const resourcenode = RESOURCE_NODES[resource];
+  if (resourcenode) {
+    console.log("get ", resourcenode.item);
   }
 
   render();
@@ -473,7 +505,7 @@ function button(l) {
   contextdenu.style.display = `none`;
 }
 
-window.addEventListener("DOMContentLoaded", start);
+window.addEventListener("DOMContentLoaded", begin);
 window.addEventListener("mousemove", mousemove);
 window.addEventListener("mousedown", mousedown);
 window.addEventListener("mouseup", mouseup);
@@ -482,3 +514,8 @@ window.addEventListener("click", click);
 window.addEventListener("resize", render);
 window.addEventListener("beforeunload", save);
 window.addEventListener("contextmenu", contextmenu);
+window.wipe = () => {
+  window.removeEventListener("beforeunload", save);
+  localStorage.clear();
+  window.location.reload();
+};

@@ -1,27 +1,22 @@
+import { MACHINES } from "./machines.js";
+import { FOUNDATIONS } from "./foundations.js";
+import { ITEMS } from "./items.js";
+//the next thing to do is to create the inventory umm and then fix all the errors
 /* eslint-disable no-console */
 //foundationmap
 let canvas;
-let ironimg;
-let copperimg;
-let limestoneimg;
-let minerMk1img;
-let minerMk2img;
-let foundationimg;
-let ironno;
-let copperno;
-let limestoneno;
 let map;
 let buildingmap;
 let foundationmap;
+let inventory;
 let contextdenu;
 let x = 0;
 let y = 0;
 let zoom = 1;
-let iron = 0;
-let copper = 0;
-let limestone = 0;
-let dx = 0,
-  dy = 0;
+/** selected square (x) */
+let dx = 0;
+/** selected square (y) */
+let dy = 0;
 let ticknumber = 0;
 const MAXZOOM = 3;
 const MINZOOM = 0.25;
@@ -33,41 +28,7 @@ const MINY = -WORLDSIZE;
 const MAXY = WORLDSIZE;
 
 const SQUARES = (MAXX - MINX + 1) * (MAXY - MINY + 1);
-const IRONPERCENT = 1 / 100;
-const COPPERPERCENT = 1 / 350;
-const LIMESTONEPERCENT = 1 / 105;
 
-const DIRT = 0;
-const IRON = 1;
-const COPPER = 2;
-const LIMESTONE = 3;
-
-const MACHINES = {
-  minerMk1: {
-    type: "miner",
-    btnlbl: "mk1",
-    tickinterval: 4,
-    amount: 1,
-    iron: 100,
-  },
-  minerMk2: {
-    type: "miner",
-    btnlbl: "mk2",
-    tickinterval: 2,
-    amount: 1,
-    iron: 1000,
-    copper: 100,
-  },
-};
-
-const FOUNDATIONS = {
-  gray: {
-    type: "gray",
-    btnlbl: "fg",
-    iron: 10,
-    limestone: 5,
-  },
-};
 function save() {
   localStorage.setItem("x", x);
   localStorage.setItem("y", y);
@@ -75,9 +36,7 @@ function save() {
   localStorage.setItem("map", JSON.stringify(map));
   localStorage.setItem("buildingmap", JSON.stringify(buildingmap));
   localStorage.setItem("foundationmap", JSON.stringify(foundationmap));
-  localStorage.setItem("iron", iron);
-  localStorage.setItem("copper", copper);
-  localStorage.setItem("limestone", limestone);
+  localStorage.setItem("inventory", inventory);
 }
 function load() {
   try {
@@ -105,12 +64,6 @@ function load() {
 
 function start() {
   canvas = document.getElementById("canvas");
-  ironimg = document.getElementById("iron");
-  copperimg = document.getElementById("copper");
-  limestoneimg = document.getElementById("limestone");
-  minerMk1img = document.getElementById("minerMk1");
-  minerMk2img = document.getElementById("minerMk2");
-  foundationimg = document.getElementById("foundation");
   ironno = document.getElementById("ironno");
   copperno = document.getElementById("copperno");
   limestoneno = document.getElementById("limestoneno");
