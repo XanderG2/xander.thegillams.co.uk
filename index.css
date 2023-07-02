@@ -48,7 +48,7 @@ a {
   align-content: flex-start;
 }
 #navigation {
-  flex: 0 0 15rem;
+  flex: 0 0 12rem;
   display: flex;
   flex-direction: column;
 }
