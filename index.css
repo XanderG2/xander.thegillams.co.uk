@@ -44,10 +44,9 @@ body {
 footer {
   padding-top: 20px;
 }
-</style>
-    <style>
-      /* styling navlist */
-      #navlist {
+
+/* styling navlist */
+#navlist {
   background-color: #0074d9;
   position: absolute;
   width: 100%;
