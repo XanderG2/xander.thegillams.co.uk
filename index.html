@@ -13,7 +13,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <script src="./index.js"></script>
   </head>
   <body>
     <div id="main">
@@ -113,7 +112,7 @@
         </div>
         <div class="expand"></div>
 
-        <footer>&copy; <i>Xander</i> 2022</footer>
+        <footer>&copy; <i>Xander</i> 2023</footer>
       </div>
       <div id="contentcontainer">
         <div id="flactorydiv" class="pagediv">
@@ -152,28 +151,6 @@
         </div>
       </div>
     </div>
-    <script>
-      /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-
-      function filterFunction() {
-        var input, filter, ul, li, a, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        div = document.getElementById("myDropdown");
-        a = div.getElementsByTagName("a");
-        for (i = 0; i < a.length; i++) {
-          txtValue = a[i].textContent || a[i].innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-          } else {
-            a[i].style.display = "none";
-          }
-        }
-      }
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
