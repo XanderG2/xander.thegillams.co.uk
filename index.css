@@ -24,18 +24,17 @@ body {
 }
 */
 
-#contentcontainer {
+#cardcontainer {
   margin-top: 10px;
   vertical-align: top;
 }
-#contentcontainer {
+#cardcontainer {
   display: flex;
   flex-wrap: wrap;
 }
 
 a {
-  text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 61);
 }
 #main {
   display: flex;
@@ -59,12 +58,14 @@ a {
 #navigation {
   background-color: rgb(56, 56, 56);
 }
+
 html,
 body {
   padding: 0;
   margin: 0;
   height: 100%;
 }
+
 footer {
   padding-top: 20px;
 }
@@ -119,6 +120,7 @@ footer {
   border: none;
   cursor: pointer;
 }
+
 .dropbtn {
   background-color: rgb(56, 56, 56);
   color: rgb(0, 0, 0);
@@ -128,9 +130,11 @@ footer {
   cursor: pointer;
   display: inline-block;
 }
+
 i {
   display: inline-block;
 }
+
 .dropbtn:hover,
 .dropbtn:focus {
   background-color: rgb(49, 49, 49);
@@ -182,10 +186,14 @@ i {
 .show {
   display: block;
 }
+
 .websitelink {
   display: inline-block;
   margin-top: 10px;
+  text-decoration: none;
+  color: black;
 }
+
 .websitelink:hover {
   background-color: rgb(0, 0, 0);
 }
