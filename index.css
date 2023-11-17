@@ -34,8 +34,14 @@ body {
 }
 
 a {
-  color: rgb(0, 0, 61);
+  color: rgb(23, 0, 117);
 }
+
+.pagea {
+  text-decoration: none;
+  color: black;
+}
+
 #main {
   display: flex;
   min-height: 100vh;
