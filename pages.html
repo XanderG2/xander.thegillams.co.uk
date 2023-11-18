@@ -2,39 +2,85 @@
 <html>
   <head>
     <style>
-                       html {
-                            height: 100%;
-                          }
+      html {
+        height: 100%;
+      }
 
-                          body {
-                            height: 100%;
-                            margin: 0;
-                            background-repeat: no-repeat;
-                            background-attachment: fixed;
-                            background: rgb(240,229,31);
-                    background: linear-gradient(0deg, rgba(240,229,31,0.9698375870069605) 2%, rgba(240,229,31,0.9698375870069605) 3%, rgba(240,229,31,1) 6%, rgba(240,229,31,1) 9%,
-                     rgba(240,229,31,1) 12%, rgba(240,229,31,1) 13%, rgba(240,229,31,1) 16%, rgba(240,229,31,1) 17%, rgba(240,229,31,0.9698375870069605) 19%, rgba(228,212,42,1) 22%,
-                      rgba(217,195,53,1) 25%, rgba(213,189,57,1) 26%, rgba(201,172,68,1) 29%, rgba(196,108,48,1) 32%, rgba(153,111,93,1) 35%, rgba(139,100,90,1) 36%,
-                       rgba(148,152,90,1) 38%, rgba(164,147,85,1) 39%, rgba(111,94,166,1) 41%, rgba(136,94,101,1) 43%, rgba(143,87,123,1) 44%, rgba(128,64,138,1) 48%,
-                        rgba(116,47,150,1) 51%, rgba(124,45,150,1) 54%, rgba(129,44,150,1) 56%, rgba(134,43,150,1) 58%, rgba(139,42,150,1) 60%, rgba(144,41,150,1) 62%,
-                        rgba(151,39,150,1) 65%, rgba(156,38,150,1) 67%, rgba(161,37,149,1) 69%, rgba(169,32,131,1) 71%, rgba(173,30,122,1) 72%, rgba(177,28,113,1) 73%,
-                        rgba(189,21,87,0.9118329466357309) 76%, rgba(196,24,82,1) 77%, rgba(203,27,77,1) 78%, rgba(210,30,72,1) 79%, rgba(217,33,68,1) 80%, rgba(224,35,63,1) 81%,
-                        rgba(231,38,59,1) 82%, rgba(253,45,45,0.962877030162413) 85%, rgba(253,45,45,0.962877030162413) 86%, rgba(253,45,45,0.962877030162413) 87%,
-                        rgba(253,45,45,0.962877030162413) 88%, rgba(253,45,45,0.962877030162413) 89%, rgba(253,45,45,0.962877030162413) 90%, rgba(253,45,45,0.962877030162413) 91%,
-                        rgba(253,45,45,0.962877030162413) 92%, rgba(253,45,45,0.962877030162413) 93%, rgba(253,45,45,0.962877030162413) 95%, rgba(253,45,45,0.962877030162413) 96%,
-                        rgba(253,45,45,0.962877030162413) 96%, rgba(253,45,45,0.962877030162413) 97%, rgba(253,45,45,0.962877030162413) 98%, rgba(253,45,45,0.962877030162413) 99%,
-                        rgba(253,45,45,0.962877030162413) 99%);
-                          );
-                          };
-                          a {
-              color: white;
-              text-decoration: none;
-
-                          }
-                          a:hover {
-          background-color: black
-
-        }    body {
+      body {
+        height: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background: rgb(240, 229, 31);
+        background: linear-gradient(
+          0deg,
+          rgba(240, 229, 31, 0.9698375870069605) 2%,
+          rgba(240, 229, 31, 0.9698375870069605) 3%,
+          rgba(240, 229, 31, 1) 6%,
+          rgba(240, 229, 31, 1) 9%,
+          rgba(240, 229, 31, 1) 12%,
+          rgba(240, 229, 31, 1) 13%,
+          rgba(240, 229, 31, 1) 16%,
+          rgba(240, 229, 31, 1) 17%,
+          rgba(240, 229, 31, 0.9698375870069605) 19%,
+          rgba(228, 212, 42, 1) 22%,
+          rgba(217, 195, 53, 1) 25%,
+          rgba(213, 189, 57, 1) 26%,
+          rgba(201, 172, 68, 1) 29%,
+          rgba(196, 108, 48, 1) 32%,
+          rgba(153, 111, 93, 1) 35%,
+          rgba(139, 100, 90, 1) 36%,
+          rgba(148, 152, 90, 1) 38%,
+          rgba(164, 147, 85, 1) 39%,
+          rgba(111, 94, 166, 1) 41%,
+          rgba(136, 94, 101, 1) 43%,
+          rgba(143, 87, 123, 1) 44%,
+          rgba(128, 64, 138, 1) 48%,
+          rgba(116, 47, 150, 1) 51%,
+          rgba(124, 45, 150, 1) 54%,
+          rgba(129, 44, 150, 1) 56%,
+          rgba(134, 43, 150, 1) 58%,
+          rgba(139, 42, 150, 1) 60%,
+          rgba(144, 41, 150, 1) 62%,
+          rgba(151, 39, 150, 1) 65%,
+          rgba(156, 38, 150, 1) 67%,
+          rgba(161, 37, 149, 1) 69%,
+          rgba(169, 32, 131, 1) 71%,
+          rgba(173, 30, 122, 1) 72%,
+          rgba(177, 28, 113, 1) 73%,
+          rgba(189, 21, 87, 0.9118329466357309) 76%,
+          rgba(196, 24, 82, 1) 77%,
+          rgba(203, 27, 77, 1) 78%,
+          rgba(210, 30, 72, 1) 79%,
+          rgba(217, 33, 68, 1) 80%,
+          rgba(224, 35, 63, 1) 81%,
+          rgba(231, 38, 59, 1) 82%,
+          rgba(253, 45, 45, 0.962877030162413) 85%,
+          rgba(253, 45, 45, 0.962877030162413) 86%,
+          rgba(253, 45, 45, 0.962877030162413) 87%,
+          rgba(253, 45, 45, 0.962877030162413) 88%,
+          rgba(253, 45, 45, 0.962877030162413) 89%,
+          rgba(253, 45, 45, 0.962877030162413) 90%,
+          rgba(253, 45, 45, 0.962877030162413) 91%,
+          rgba(253, 45, 45, 0.962877030162413) 92%,
+          rgba(253, 45, 45, 0.962877030162413) 93%,
+          rgba(253, 45, 45, 0.962877030162413) 95%,
+          rgba(253, 45, 45, 0.962877030162413) 96%,
+          rgba(253, 45, 45, 0.962877030162413) 96%,
+          rgba(253, 45, 45, 0.962877030162413) 97%,
+          rgba(253, 45, 45, 0.962877030162413) 98%,
+          rgba(253, 45, 45, 0.962877030162413) 99%,
+          rgba(253, 45, 45, 0.962877030162413) 99%
+        );
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: black;
+      }
+      body {
         font-family: Arial, Helvetica, sans-serif;
       }
 
@@ -102,16 +148,123 @@
         box-shadow: 10px 10px 30px gray;
         background-color: purple;
       }
+      #navlist {
+        background-color: #0074d9;
+        position: absolute;
+        width: 100%;
+      }
+
+      /* styling navlist anchor element */
+      #navlist a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 15px;
+      }
+      .navlist-right {
+        float: right;
+      }
+
+      /* hover effect of navlist anchor element */
+      #navlist a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* styling search bar */
+      .search input[type="text"] {
+        width: 300px;
+        height: 25px;
+        border-radius: 25px;
+        border: none;
+      }
+
+      .search {
+        float: right;
+        margin: 7px;
+      }
+
+      .search button {
+        background-color: #0074d9;
+        color: #f2f2f2;
+        float: right;
+        padding: 5px 10px;
+        margin-right: 16px;
+        font-size: 12px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropbtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropbtn:hover,
+      .dropbtn:focus {
+        background-color: #3e8e41;
+      }
+
+      #myInput {
+        box-sizing: border-box;
+        background-image: url("searchicon.png");
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      #myInput:focus {
+        outline: 3px solid #ddd;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        overflow: auto;
+        border: 1px solid #ddd;
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown a:hover {
+        background-color: #ddd;
+      }
+
+      .show {
+        display: block;
+      }
     </style>
     <title>Pages | Xanders website</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
     <div class="navbar">
       <a href="index.html">Home</a>
-      <a href="https://github.com/XanderG2/xander.thegillams.co.uk"
-        >Latest on github</a
-      >
+      <a href="https://github.com/XanderG2/xander.thegillams.co.uk">Latest on github</a>
       <div class="dropdown1">
         <button class="dropbtn1">
           Dropdown
@@ -124,213 +277,77 @@
         </div>
       </div>
     </div>
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-
-        <style>
-          /* styling navlist */
-          #navlist {
-            background-color: #0074d9;
-            position: absolute;
-            width: 100%;
-          }
-
-          /* styling navlist anchor element */
-          #navlist a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 12px;
-            text-decoration: none;
-            font-size: 15px;
-          }
-          .navlist-right {
-            float: right;
-          }
-
-          /* hover effect of navlist anchor element */
-          #navlist a:hover {
-            background-color: #ddd;
-            color: black;
-          }
-
-          /* styling search bar */
-          .search input[type="text"] {
-            width: 300px;
-            height: 25px;
-            border-radius: 25px;
-            border: none;
-          }
-
-          .search {
-            float: right;
-            margin: 7px;
-          }
-
-          .search button {
-            background-color: #0074d9;
-            color: #f2f2f2;
-            float: right;
-            padding: 5px 10px;
-            margin-right: 16px;
-            font-size: 12px;
-            border: none;
-            cursor: pointer;
-          }
-          .dropbtn {
-            background-color: #4caf50;
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-          }
-
-          .dropbtn:hover,
-          .dropbtn:focus {
-            background-color: #3e8e41;
-          }
-
-          #myInput {
-            box-sizing: border-box;
-            background-image: url("searchicon.png");
-            background-position: 14px 12px;
-            background-repeat: no-repeat;
-            font-size: 16px;
-            padding: 14px 20px 12px 45px;
-            border: none;
-            border-bottom: 1px solid #ddd;
-          }
-
-          #myInput:focus {
-            outline: 3px solid #ddd;
-          }
-
-          .dropdown {
-            position: relative;
-            display: inline-block;
-          }
-
-          .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f6f6f6;
-            min-width: 230px;
-            overflow: auto;
-            border: 1px solid #ddd;
-            z-index: 1;
-          }
-
-          .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-          }
-
-          .dropdown a:hover {
-            background-color: #ddd;
-          }
-
-          .show {
-            display: block;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="dropdown">
-          <button onclick="myFunction()" class="dropbtn">Search..Pages</button>
-          <div id="myDropdown" class="dropdown-content">
-            <input
-              type="text"
-              placeholder="Search.."
-              id="myInput"
-              onkeyup="filterFunction()"
-            />
-            <a href="index.html">index</a>
-            <a href="aboutStuff\about.html">about me</a>
-            <a href="firsfarm.html">firs farm 2017</a>
-            <a href="number_sentences.html">number sentences</a>
-            <a href="titanic.html">titanic</a>
-            <a href="b.html">io games i play</a>
-            <a href="ijno.html">ijno</a>
-            <a href="rectangle.html">rectangle</a>
-            <a href="svg.svg">learning svg</a>
-            <a href="svg2.svg">2nd page on svg</a>
-            <a href="man.svg">man</a>
-            <a href="creeper.svg">creeper</a>
-            <a href="house.svg">house with twinkling stars</a>
-            <a href="rainbow.svg">dissapearing rainbow</a>
-            <a href="shapes.svg">shapes</a>
-            <a href="smiling_heart.svg">smiling heart</a>
-            <a href="aboutStuff/allabouttheFibonacciSequence.html"
-              >Fibonnacci sequence</a
-            >
-            <a href="aboutStuff/minecraft/gillam.html">Gillam 1</a>
-            <a href="naughts_and_crosses">naughts and crosses</a>
-            <a href="floss.svg">floss</a>
-            <a href="logos.html">google logo</a>
-            <a href="otherLogos\Yt.html">youTube logo</a>
-            <a href="insta.html">instagram logo</a>
-            <a href="background_switcher.html">colour changer</a>
-            <a href="path_Gillam_Zack_Xander.svg"
-              >a line getting bigger and smaller</a
-            >
-            <a href="underpants.html">captain underpants story</a>
-            <a href="buttonCountThingAngularJS.html"
-              >try to get to 1000 clicks</a
-            >
-            <a href="chicken.svg">a chicken (Zack insisted)</a>
-            <a href="happyFarthersDayDad.html">Farthers day 2019</a>
-            <a href="recursive.html">Testing</a>
-            <a href="moretesting.html">More testing</a>
-            <a href="tens.html">tens</a>
-            <a href="DiceThrows.html">100 dice throws</a>
-            <a href="draggable.html">draggable</a>
-            <a href="chickenTwo.svg">Real Chicken</a>
-            <a href="userStuff/usersignin.html">Sign In</a>
-            <a href="Game.html">Flappy Bird</a>
-            <a href="Pong/Pong.html">Pong</a>
-            <a href="calc.html">calculator</a>
-            <a href="calcTwo.html">advanced calculator</a>
-          </div>
-        </div>
-
-        <script>
-          /* When the user clicks on the button,
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Search..Pages</button>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" />
+        <a href="index.html">index</a>
+        <a href="aboutStuff\about.html">about me</a>
+        <a href="firsfarm.html">firs farm 2017</a>
+        <a href="number_sentences.html">number sentences</a>
+        <a href="titanic.html">titanic</a>
+        <a href="b.html">io games i play</a>
+        <a href="ijno.html">ijno</a>
+        <a href="rectangle.html">rectangle</a>
+        <a href="svg.svg">learning svg</a>
+        <a href="svg2.svg">2nd page on svg</a>
+        <a href="man.svg">man</a>
+        <a href="creeper.svg">creeper</a>
+        <a href="house.svg">house with twinkling stars</a>
+        <a href="rainbow.svg">dissapearing rainbow</a>
+        <a href="shapes.svg">shapes</a>
+        <a href="smiling_heart.svg">smiling heart</a>
+        <a href="aboutStuff/allabouttheFibonacciSequence.html">Fibonnacci sequence</a>
+        <a href="aboutStuff/minecraft/gillam.html">Gillam 1</a>
+        <a href="naughts_and_crosses">naughts and crosses</a>
+        <a href="floss.svg">floss</a>
+        <a href="logos.html">google logo</a>
+        <a href="otherLogos\Yt.html">youTube logo</a>
+        <a href="insta.html">instagram logo</a>
+        <a href="background_switcher.html">colour changer</a>
+        <a href="path_Gillam_Zack_Xander.svg">a line getting bigger and smaller</a>
+        <a href="underpants.html">captain underpants story</a>
+        <a href="buttonCountThingAngularJS.html">try to get to 1000 clicks</a>
+        <a href="chicken.svg">a chicken (Zack insisted)</a>
+        <a href="happyFarthersDayDad.html">Farthers day 2019</a>
+        <a href="recursive.html">Testing</a>
+        <a href="moretesting.html">More testing</a>
+        <a href="tens.html">tens</a>
+        <a href="DiceThrows.html">100 dice throws</a>
+        <a href="draggable.html">draggable</a>
+        <a href="chickenTwo.svg">Real Chicken</a>
+        <a href="userStuff/usersignin.html">Sign In</a>
+        <a href="Game.html">Flappy Bird</a>
+        <a href="Pong/Pong.html">Pong</a>
+        <a href="calc.html">calculator</a>
+        <a href="calcTwo.html">advanced calculator</a>
+      </div>
+    </div>
+    <script>
+      /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
-          function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-          }
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
 
-          function filterFunction() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            div = document.getElementById("myDropdown");
-            a = div.getElementsByTagName("a");
-            for (i = 0; i < a.length; i++) {
-              txtValue = a[i].textContent || a[i].innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                a[i].style.display = "";
-              } else {
-                a[i].style.display = "none";
-              }
-            }
+      function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+          txtValue = a[i].textContent || a[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+          } else {
+            a[i].style.display = "none";
           }
-        </script>
-        <br />
-        <br />
-        <br />
-      </body>
-    </html>
+        }
+      }
+    </script>
+    <br />
+    <br />
+    <br />
   </body>
 </html>
