@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Xander's Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index-light.css" id="stylesheetlink"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -105,17 +105,18 @@
           </ul>
         </div>
         <div class="expand"></div>
+        <button onclick="toggleTheme()">Switch Theme</button> 
         <footer>&copy; <i>Xander</i> 2017-2023</footer>
       </div>
       <div id="contentcontainer">
-        <h2>About</h2>
+        <h2 id="abouth1">About</h2>
         <div id="about">
           <p>
             Welcome! I'm Xander, and this website has been my creative hub since 2017. <br />
             Explore my other projects on the left and dive into various pages through the search feature and the cards below.<br/>
             I learnt how to code in HTML, CSS and JavaScript through coding in this website. <br/>
             I also code in languages such as:
-            <ul>
+            <ul id="aboutlist">
               <li>Python and pygame [View some <a href="https://github.com/XanderG2/python-project">Here</a>]</li>
               <li>CoffeeScript [<a href="https://replit.com/@xangil/Coffeescript-website?v=1">Here</a>]</li>
               <li>TypeScript (React and Next.js) [<a href="https://replit.com/@xangil/GreatRespectfulPlanes?v=1">Here</a> and <a href="https://replit.com/@xangil/Blueit-2?v=1">here</a>]</li>

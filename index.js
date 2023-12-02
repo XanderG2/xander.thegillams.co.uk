@@ -30,3 +30,12 @@ function filterFunction() {
     }
   }
 }
+
+function toggleTheme() {
+  const theme = document.getElementById("stylesheetlink");
+  if (theme.getAttribute("href") == "index-light.css") {
+    theme.setAttribute("href", "index-dark.css");
+  } else {
+    theme.setAttribute("href", "index-light.css");
+  }
+}
