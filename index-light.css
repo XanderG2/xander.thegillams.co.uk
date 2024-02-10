@@ -6,7 +6,7 @@ body {
 }
 .pagediv {
   border: 1px solid;
-  box-shadow: 5px 10px #000000;
+  box-shadow: 5px 10px #474747;
   padding: 10px;
   margin-left: 30px;
   margin-bottom: 10px;
@@ -157,7 +157,7 @@ i {
 
 .dropbtn:hover,
 .dropbtn:focus {
-  background-color: #161616;
+  background-color: #b8b8b8;
 }
 
 #myInput {
@@ -169,7 +169,7 @@ i {
   padding: 2px;
   border: none;
   border-bottom: 1px solid rgb(54, 54, 54);
-  background-color: #161616;
+  background-color: #afafaf;
 }
 
 #myInput:focus {
@@ -184,7 +184,7 @@ i {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #0f0f0f;
+  background-color: #c4c4c4;
   width: 100px;
   height: 25vh;
   overflow: hidden;
@@ -200,7 +200,7 @@ i {
 }
 
 .dropdown a:hover {
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(199, 199, 199);
 }
 
 .show {
@@ -219,5 +219,5 @@ i {
 }
 
 .dev:hover {
-  background-color: rgb(143, 52, 52);
+  background-color: rgb(218, 44, 44);
 }
