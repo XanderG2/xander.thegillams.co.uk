@@ -16,7 +16,7 @@ async function getJSON() {
 
 let datas = null;
 
-getJSON().then((data) => {
+getJSON().then(data => {
   if (data) {
     datas = data;
   }
@@ -58,12 +58,16 @@ function check() {
   } else {
     console.log("data not loaded yet");
   }
-  fullText =
-    "Results for the word(s) '" +
-    input +
-    "':\n" +
-    JSON.stringify(allOccurances)
-      .replaceAll(/[{},]/g, "\n")
+  let lyricshtml = "";
+  for (const [sectionName, value] of Object.entries(allOccurances)) {
+    lyricshtml += `<div id="${sectionName}">`;
+    lyricshtml += `<h2>${sectionName}</h2>`;
+    lyricshtml += JSON.stringify(value)
+      .substring(2)
+      .replaceAll(/[{},]/g, "<br/>")
       .replaceAll(/["]/g, "");
-  resultDiv.innerText = fullText;
+    lyricshtml += `</div>`;
+  }
+  const fullHTML = "Results for the word" + (input.length > 1 ? "s '" : " '") + input.join(" ") + "':<br/>" + lyricshtml;
+  resultDiv.innerHTML = fullHTML;
 }
