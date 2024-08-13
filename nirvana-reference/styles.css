@@ -1,0 +1,39 @@
+#Bleach {
+  background-color: #b1b1b1;
+}
+
+#Nevermind {
+  background-color: #0064b0;
+}
+
+#Incesticide {
+  background-color: #dace93;
+}
+
+#InUtero {
+  background-color: #faf7d5;
+}
+
+.section {
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.section img {
+  height: 300px;
+  width: 300px;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .section img {
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+  }
+}

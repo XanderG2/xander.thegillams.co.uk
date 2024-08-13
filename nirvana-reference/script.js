@@ -28,14 +28,14 @@ function check() {
   if (datas) {
     allLyrics = datas.songs;
     for (song of allLyrics) {
-      lyrics = song.lyrics;
-      title = song.title;
-      album = song.album;
+      const lyrics = song.lyrics;
+      const title = song.title;
+      const album = song.album;
       if (!allOccurances[album]) {
         allOccurances[album] = {};
       }
       allOccurances[album][title] = 0;
-      words = lyrics.split(" ");
+      const words = lyrics.split(" ");
       let currentindex = 0;
       for (word of words) {
         if (word === input[0]) {
@@ -60,12 +60,14 @@ function check() {
   }
   let lyricshtml = "";
   for (const [sectionName, value] of Object.entries(allOccurances)) {
-    lyricshtml += `<div id="${sectionName}">`;
+    const nospace = sectionName.replace(/\s/g, "");
+    lyricshtml += `<div id="${nospace}" class="section">`;
     lyricshtml += `<h2>${sectionName}</h2>`;
     lyricshtml += JSON.stringify(value)
       .substring(2)
       .replaceAll(/[{},]/g, "<br/>")
       .replaceAll(/["]/g, "");
+    lyricshtml += `<img src="img/${nospace}.jpg"/>`;
     lyricshtml += `</div>`;
   }
   const fullHTML = "Results for the word" + (input.length > 1 ? "s '" : " '") + input.join(" ") + "':<br/>" + lyricshtml;
