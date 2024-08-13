@@ -24,7 +24,7 @@
   width: 100%;
 }
 
-.section img {
+.section > img {
   height: 300px;
   width: 300px;
   margin-right: 20px;
@@ -36,4 +36,13 @@
     width: 100px;
     margin-right: 20px;
   }
+}
+
+.section > h2 {
+  width: 10em;
+  flex-grow: 0;
+}
+
+.section > .matches {
+  flex-grow: 1;
 }

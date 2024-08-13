@@ -63,10 +63,12 @@ function check() {
     const nospace = sectionName.replace(/\s/g, "");
     lyricshtml += `<div id="${nospace}" class="section">`;
     lyricshtml += `<h2>${sectionName}</h2>`;
+    lyricshtml += `<div class="matches">`;
     lyricshtml += JSON.stringify(value)
       .substring(2)
       .replaceAll(/[{},]/g, "<br/>")
       .replaceAll(/["]/g, "");
+    lyricshtml += `</div>`;
     lyricshtml += `<img src="img/${nospace}.jpg"/>`;
     lyricshtml += `</div>`;
   }
