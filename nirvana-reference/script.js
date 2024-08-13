@@ -25,7 +25,7 @@ getJSON().then(data => {
 function check() {
   const input = inp.value
     .toLowerCase()
-    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()'"£\[\]@<>?+¬¦€']/g, "")
     .split(" ");
   let allOccurances = {};
   if (datas) {
@@ -61,20 +61,28 @@ function check() {
   } else {
     console.log("data not loaded yet");
   }
-  let lyricshtml = "";
+  resultDiv.innerHTML = "";
+  const resultP = document.createElement("p");
+  resultP.innerText = "Results for the word" + (input.length > 1 ? "s '" : " '") + input.join(" ") + ":";
+  resultDiv.appendChild(resultP);
   for (const [sectionName, value] of Object.entries(allOccurances)) {
     const nospace = sectionName.replace(/\s/g, "");
-    lyricshtml += `<div id="${nospace}" class="section">`;
-    lyricshtml += `<h2>${sectionName}</h2>`;
-    lyricshtml += `<div class="matches">`;
-    lyricshtml += JSON.stringify(value)
+    const sectionDiv = document.createElement("div");
+    sectionDiv.id = nospace;
+    sectionDiv.className = "section";
+    const h2 = document.createElement("h2");
+    h2.innerText = sectionName;
+    const matches = document.createElement("div");
+    matches.className = "matches";
+    matches.innerHTML = JSON.stringify(value)
       .substring(2)
       .replaceAll(/[{},]/g, "<br/>")
       .replaceAll(/["]/g, "");
-    lyricshtml += `</div>`;
-    lyricshtml += `<img src="img/${nospace}.jpg"/>`;
-    lyricshtml += `</div>`;
+    const img = document.createElement("img");
+    img.src = `img/${nospace}.jpg`;
+    sectionDiv.appendChild(h2);
+    sectionDiv.appendChild(matches);
+    sectionDiv.appendChild(img);
+    resultDiv.appendChild(sectionDiv);
   }
-  const fullHTML = "Results for the word" + (input.length > 1 ? "s '" : " '") + input.join(" ") + "':<br/>" + lyricshtml;
-  resultDiv.innerHTML = fullHTML;
 }
