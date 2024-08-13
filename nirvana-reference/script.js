@@ -23,11 +23,14 @@ getJSON().then(data => {
 });
 
 function check() {
-  const input = inp.value.toLowerCase().split(" ");
+  const input = inp.value
+    .toLowerCase()
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .split(" ");
   let allOccurances = {};
   if (datas) {
     allLyrics = datas.songs;
-    for (song of allLyrics) {
+    for (const song of allLyrics) {
       const lyrics = song.lyrics;
       const title = song.title;
       const album = song.album;
@@ -37,7 +40,7 @@ function check() {
       allOccurances[album][title] = 0;
       const words = lyrics.split(" ");
       let currentindex = 0;
-      for (word of words) {
+      for (const word of words) {
         if (word === input[0]) {
           let arr = [];
           for (let i = 0; i < input.length; i++) {
