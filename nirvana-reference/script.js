@@ -62,7 +62,7 @@ function check() {
   }
   resultDiv.innerHTML = "";
   const resultP = document.createElement("p");
-  resultP.innerText = "Results for the word" + (input.length > 1 ? "s '" : " '") + input.join(" ") + ":";
+  resultP.innerText = "Results for the word" + (input.length > 1 ? "s '" : " '") + input.join(" ") + "':";
   resultDiv.appendChild(resultP);
   for (const [sectionName, value] of Object.entries(allOccurances)) {
     const nospace = sectionName.replace(/\s/g, "");
