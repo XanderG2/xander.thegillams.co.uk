@@ -29,7 +29,7 @@ function check() {
     .split(" ");
   let allOccurances = {};
   if (datas) {
-    allLyrics = datas.songs;
+    const allLyrics = datas.songs;
     for (const song of allLyrics) {
       const lyrics = song.lyrics;
       const title = song.title;
@@ -46,7 +46,6 @@ function check() {
           for (let i = 0; i < input.length; i++) {
             arr.push(words[currentindex + i]);
           }
-          //console.log(arr);
           if (JSON.stringify(arr) == JSON.stringify(input)) {
             if (allOccurances[album][title] > 0) {
               allOccurances[album][title] += 1;
