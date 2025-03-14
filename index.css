@@ -1,0 +1,64 @@
+html {
+  min-height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+  flex-direction: column;
+  color: #d0d0d0;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1vmax;
+}
+
+#title {
+  text-align: center;
+  font-size: 3.5vmax;
+}
+
+.contcontainer {
+  margin-top: 5px;
+  display: flex;
+  height: 50vh;
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 3vmax;
+  }
+  .contcontainer {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+  }
+}
+
+.container {
+  box-shadow: 2px 2px 4px #000000;
+  border-radius: 5px;
+  margin: 0px 0.5vh 0px 0.5vh;
+  padding: 5px;
+  flex-grow: 1;
+  transition: 0.3s;
+  background-color: #1d1d1d;
+  margin-top: 5px;
+}
+
+.container:hover {
+  flex-grow: 2;
+}
+
+.footer {
+  flex-shrink: 100;
+  bottom: 0;
+}
