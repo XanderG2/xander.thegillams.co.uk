@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Xander's Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="index-light.css" id="stylesheetlink"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <div id="navigation">
+        <i class="fa fa-search"></i>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Search</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" />
+            <a href="index.html">index</a>
+            <a href="aboutStuff\about.html">about me</a>
+            <a href="firsfarm.html">firs farm 2017</a>
+            <a href="number_sentences.html">number sentences</a>
+            <a href="titanic.html">titanic</a>
+            <a href="top3games.html">io games i play</a>
+            <a href="ijno.html">ijno</a>
+            <a href="rectangle/rectangle.html">rectangle</a>
+            <a href="svgs/svg.svg">learning svg</a>
+            <a href="svgs/svg2.svg">2nd page on svg</a>
+            <a href="svgs/man.svg">man</a>
+            <a href="svgs/creeper.svg">creeper</a>
+            <a href="svgs/house.svg">house with twinkling stars</a>
+            <a href="svgs/rainbow.svg">dissapearing rainbow</a>
+            <a href="svgs/shapes.svg">shapes</a>
+            <a href="svgs/smiling_heart.svg">smiling heart</a>
+            <a href="aboutStuff/allabouttheFibonacciSequence.html">Fibonnacci sequence</a>
+            <a href="aboutStuff/minecraft/gillam.html">Gillam 1</a>
+            <a href="naughts_and_crosses">naughts and crosses</a>
+            <a href="svgs/floss.svg">floss</a>
+            <a href="logos/google.html">google logo</a>
+            <a href="logos/Yt.html">youTube logo</a>
+            <a href="logos/insta.html">instagram logo</a>
+            <a href="background_switcher.html">colour changer</a>
+            <a href="svgs/path_Gillam_Zack_Xander.svg">a line getting bigger and smaller</a>
+            <a href="underpants/underpants.html">captain underpants story</a>
+            <a href="buttonCountThingAngularJS/buttonCountThingAngularJS.html">try to get to 1000 clicks</a>
+            <a href="svgs/chicken.svg">a chicken (Zack insisted)</a>
+            <a href="happyFarthersDayDad.html">Farthers day 2019</a>
+            <a href="recursive.html">Testing</a>
+            <a href="moretesting.html">More testing</a>
+            <a href="tens.html">tens</a>
+            <a href="DiceThrows.html">100 dice throws</a>
+            <a href="draggable.html">draggable</a>
+            <a href="svgs/chickenTwo.svg">Real Chicken</a>
+            <a href="userStuff/usersignin.html">Sign In</a>
+            <a href="Game.html">Flappy Bird</a>
+            <a href="Pong/Pong.html">Pong</a>
+            <a href="calc.html">calculator</a>
+            <a href="calcTwo.html">advanced calculator</a>
+          </div>
+          <h3><b>Other projects:</b></h3>
+          <ul>
+            <li>
+              <a class="websitelink" href="http://zack.thegillams.co.uk/">
+                Zacks website
+              </a>
+            </li>
+            <li>
+              <a class="websitelink" href="https://zackxander.github.io">
+                Shared website
+              </a>
+            </li>
+            <li>
+              <a class="websitelink" href="https://replit.com/@xangil">
+                Replit
+              </a>
+            </li>
+            <li>
+              <a class="websitelink" href="https://replit.com/@xangil2">
+                School replit
+              </a>
+            </li>
+            <li>
+              <a class="websitelink" href="https://replit.com/@xander19">
+                Personal replit
+              </a>
+            </li>
+            <li>
+              <a class="websitelink" href="https://web-client.xangil.repl.co/">
+                Text chat (cant run anymore because replit doesnt host node.js)
+              </a>
+            </li>
+            <li>
+              <a class="websitelink" href="https://javascript-website-v20.xangil2.repl.co/">
+                Javascript website (cant run anymore because replit doesnt host node.js)
+              </a>
+            </li>
+            <li>
+              <a class="websitelink" href="https://honey.thegillams.co.uk/">
+                Dave's honey
+              </a>
+            </li>
+            <li>
+              <a class="websitelink" href="http://xvps.thegillams.co.uk">
+                Virtual private server (Blueit-2)
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="expand"></div>
+        <button onclick="toggleTheme()">Switch Theme</button> 
+        <footer>&copy; <i>Xander</i> 2017-2024</footer>
+      </div>
+      <div id="contentcontainer">
+        <h2 id="abouth1">About</h2>
+        <div id="about">
+          <p>
+            Welcome! I'm Xander, and this website has been my creative hub since 2017. <br />
+            Explore my other projects on the left and dive into various pages through the search feature and the cards below.<br/>
+            I learnt how to code in HTML, CSS and JavaScript through coding in this website. <br/>
+            I also code in languages such as:
+            <ul id="aboutlist">
+              <li>Python and pygame [View some <a href="https://github.com/XanderG2/python-project">Here</a>]</li>
+              <li>CoffeeScript [<a href="https://replit.com/@xangil/Coffeescript-website?v=1">Here</a>]</li>
+              <li>TypeScript (React and Next.js) [<a href="https://replit.com/@xangil/GreatRespectfulPlanes?v=1">Here</a> and <a href="https://replit.com/@xangil/Blueit-2?v=1">here</a>/<a href="https://github.com/xanderg2/Blueit-2">here</a>]</li>
+              <li>JavaScript and Node.js [<a href="https://replit.com/@xangil2/JavaScript-website-V20?v=1">Here</a>]</li>
+              <li>C, C# and C++ (In very small amounts) [<a href="https://replit.com/@xangil/aliens-C?v=1">Here</a>]</li>
+              <li>Java (Once) [<a href="https://replit.com/@xangil/Basic-Java?v=1">Here</a>]</li>
+              <li>Lua [<a href="https://replit.com/@xangil/Lua?v=1">Here</a>]</li>
+            </ul>
+            Find some other projects on the left and my replit account - which has coding in other languages - <br/>
+            <a href="https://replit.com/@xangil">here</a>, <a href="https://replit.com/@xangil2">here</a> and <a href="https://replit.com/@xander19">here</a>.
+          </p>
+        </div>
+        <br /><br /><br />
+        <div id="cardcontainer">
+          <div id="valheimdiv" class="pagediv">
+            <a href="vs/" class="pagea">
+              <h2>Valheim stats</h2>
+              <p style="font-size:13px">
+                Building cost calculator for valheim. My newest repository on <a href="github/">GitHub</a>.
+              </p>
+            </a>
+          </div>
+          <div id="flactorydiv" class="pagediv dev">
+            <a href="flactory/index.html" class="pagea">
+              <h2>Flactory</h2>
+              <p>
+                Factory game. My <s>newest and</s> hardest creation.[under development]
+              </p>
+            </a>
+          </div>
+          <div id="pagesdiv" class="pagediv">
+            <a href="pages.html" class="pagea">
+              <h2>Pages</h2>
+              <p>
+                Explore all the pages that I have made from just 1 searchbox.
+              </p>
+            </a>
+          </div>
+          <div id="xanderbloxdiv" class="pagediv">
+            <a href="Xanderblox/index.html" class="pagea">
+              <h2>Xanderblox</h2>
+              <p>
+                I try to make a page close to ROBLOX.
+              </p>
+            </a>
+          </div>
+          <div id="cipherdiv" class="pagediv">
+            <a href="Cipher/Cipher.html" class="pagea">
+              <h2>Cipher</h2>
+              <p>
+                Cipher and uncipher for rot
+              </p>
+            </a>
+          </div>
+          <div id="aboutdiv" class="pagediv">
+            <a href="aboutStuff/about.html" class="pagea">
+              <h2>About me</h2>
+              <p>
+                About me and this website
+              </p>
+            </a>
+          </div>
+          <div id="calcdiv" class="pagediv">
+            <a href="calc.html" class="pagea">
+              <h2>Calculator</h2>
+              <p>
+                Calculator for basic needs
+              </p>
+            </a>
+          </div>
+          <div id="calc2div" class="pagediv">
+            <a href="calcTwo.html" class="pagea">
+              <h2>Adv. Calculator</h2>
+              <p>
+                Calculator for advanced needs
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
