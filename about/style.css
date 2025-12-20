@@ -1,0 +1,52 @@
+html {
+  background-color: #131212;
+  padding: 0px 20%;
+  margin: 0px;
+}
+body {
+  background-color: #121212;
+  flex-direction: column;
+  color: #d0d0d0;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1.5vmax;
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 3vmax;
+  }
+}
+
+nav {
+  background-color: #0f0f0f;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul li {
+  flex-grow: 1;
+  text-align: center;
+  transition: 0.3s;
+  margin: 0.6% 0%;
+}
+
+nav ul li:hover {
+  flex-grow: 1.1;
+  text-align: center;
+  color: #dfdfdf;
+  cursor: pointer;
+}
