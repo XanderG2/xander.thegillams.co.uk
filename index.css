@@ -41,6 +41,16 @@ body {
     flex-direction: column;
     height: 150vh;
   }
+  .container:hover {
+    color: #dfdfdf;
+    font-size: 3.05vmax;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container:hover {
+    flex-grow: 2;
+  }
 }
 
 .container {
@@ -52,10 +62,6 @@ body {
   transition: 0.3s;
   background-color: #1d1d1d;
   margin-top: 5px;
-}
-
-.container:hover {
-  flex-grow: 2;
 }
 
 .footer {
