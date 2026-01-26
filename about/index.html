@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="switchContainer">
+      <p>English</p>
+      <label class="switch">
+        <input type="checkbox" id="deutsch" />
+        <span class="slider round"></span>
+      </label>
+      <p>German</p>
+    </div>
     <nav>
       <ul>
         <li onclick="">About</li>
@@ -15,7 +23,7 @@
         <li onclick="window.location.href='../portfolio/'">Portfolio</li>
       </ul>
     </nav>
-    <main>
+    <main class="english">
       <h1>Hi! I'm Xander.</h1>
       <p>
         Welcome to my website. This place has been my main expressive outlet for my code and programming since 2017.
@@ -52,6 +60,45 @@
         Haskell, as they are required for college.
       </p>
     </main>
+    <main class="deutsch">
+      <h1>Hallo! Ich heiße Xander.</h1>
+      <p>
+        Willkommen auf meiner Website. Seit 2017 ist dieser Ort mein zentrales Medium, um meine Programmierkenntnisse
+        auszudrücken. Ich lerne auch Deutsch, aber mein Deutsch ist noch nicht so gut. Diese Übersetzung ist eine Übung
+        für mich, mein Deutsch zu verbessern.
+        <br />
+      </p>
+      <h2>Wer bin ich?</h2>
+      <p>
+        Ich bin Amateurprogrammierer und interessiere mich allgemein für Informatik und Programmierung. 2017 habe ich
+        gelernt, auf <i>dieser Website</i> mit HTML zu programmieren! Ich liebe es, verschiedene Aspekte verschiedener
+        Programmiersprachen zu lernen.
+      </p>
+      <h2>Was noch?</h2>
+      <p>
+        Ich mag viele Musikgenres und liebe es, über Musik zu sprechen. Meine Lieblingsbands sind My Chemical Romance,
+        Rev3rent, Cannibal Corpse, Modern Baseball, Leathermouth und Pencey Prep. Meine Lieblingsgenres sind Metal, Emo,
+        Punk, Hardcore, Noise, Grindcore und Gorenoise. <br />
+        Ich liebe Debatten und diskutiere gerne über Politik. Ich glaube nicht an Diskriminierung.<br />
+        Ich spiele gerne Videospiele, besonders Survival-, Rhythmus-, Plattform- und Fabrikbau-Spiele, darunter
+        Minecraft, Valheim, Satisfactory, Dyson Sphere Program, Celeste und Geometry Dash.
+      </p>
+      <h2>Warum gibt es diese Website?</h2>
+      <p>
+        Diese Website existiert als ein persönliches Projekt aus Leidenschaft, damit ich etwas veröffentlichen kann, das
+        andere Menschen sehen können. Ich finde es ziemlich cool, dass gerade jetzt jemand, der mich gar nicht kennt,
+        dies liest. Außerdem nutze ich sie, um Webdesign zu üben. Dies ist das erste Mal, dass ich auf dieser Website
+        auf Deutsch geschrieben habe.
+      </p>
+      <h2>Noch etwas zum Programmieren?</h2>
+      <p>
+        Na ja, liebe ich neues Programmiersprachen zu lernen. Ich lerne F# jetzt.<br />
+        Ich beherrsche Python, JavaScript/TypeScript, CSS/HTML und Lua. <br />
+        Ich kenne ein bisschen C, C++, CoffeeScript und Java aber ich bin nicht so sicher. <br />
+        Ich werde C# und Haskell lernen, weil sie im College Pflichtfächer sind.
+      </p>
+    </main>
     <footer><i>&copy; Xander 2025</i></footer>
+    <script src="script.js"></script>
   </body>
 </html>
