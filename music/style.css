@@ -118,3 +118,33 @@ nav ul li:hover {
     transform: translateX(-100%);
   }
 }
+
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(var(--scroll-distance));
+  }
+}
+
+.name,
+.artist {
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.na.scrolling {
+  animation: scroll 8s ease-in-out infinite alternate;
+}
+
+.nacont {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.name::-webkit-scrollbar,
+.artist::-webkit-scrollbar {
+  display: none;
+}
