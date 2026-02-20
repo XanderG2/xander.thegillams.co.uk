@@ -59,7 +59,8 @@ nav ul li:hover {
   max-width: 540px;
 }
 
-.albums {
+.albums,
+.singles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
   gap: 1rem;
@@ -166,6 +167,7 @@ nav ul li:hover {
 
 .heading i {
   margin-right: 25px;
+  cursor: pointer;
 }
 
 .genres {

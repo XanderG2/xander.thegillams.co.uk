@@ -17,7 +17,7 @@ function toggle(section) {
   else if (sec.style.display == "none") sec.style.display = "grid";
 }
 
-function search() {
+function searchGenres() {
   const toSearch = document.getElementById("genresAlbums").value.toLowerCase();
   const els = document.querySelector(".albums").querySelectorAll(".music");
   els.forEach(el => {
@@ -28,4 +28,16 @@ function search() {
   });
 }
 
-document.getElementById("genresAlbums").addEventListener("keyup", search);
+function searchSingles() {
+  const toSearch = document.getElementById("genresSingles").value.toLowerCase();
+  const els = document.querySelector(".albums").querySelectorAll(".music");
+  els.forEach(el => {
+    const genres = Array.from(el.querySelectorAll(".genre")).map(e => e.innerText.toLowerCase());
+    const contains = genres.some(txt => txt.includes(toSearch));
+    if (!contains) el.style.display = "none";
+    else el.style.display = "block";
+  });
+}
+
+document.getElementById("genresAlbums").addEventListener("keyup", searchGenres);
+document.getElementById("genresSingles").addEventListener("keyup", searchSingles);
