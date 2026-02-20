@@ -5,372 +5,390 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Xander - My favourite music</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a4a03fce2d.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav>
       <ul>
         <li onclick="window.location.href='../about/'">About</li>
         <li onclick="window.location.href='../'">Main</li>
-        <li onclick="">Pages</li>
+        <li onclick="window.location.href='../pages/'">Pages</li>
         <li onclick="window.location.href='../portfolio/'">Portfolio</li>
       </ul>
     </nav>
     <main>
-      <h2>Albums</h2>
-      <p>These are some of my favourite albums of all time.</p>
-      <div class="albums">
-        <div class="music">
-          <div class="nacont">
-            <div class="name na">I Brought You My Bullets, You Brought Me Your Love</div>
-          </div>
-          <div class="nacont"><div class="artist na">My Chemical Romance</div></div>
-          <div class="divided">
-            <div class="left">
-              <div class="abt">
-                <p>
-                  I love this album, it is definitely within my top 5 of all time. The rawness of the vocals, and
-                  intense emotion in the lyrics ties it together for me.
-                </p>
-              </div>
-            </div>
-            <div class="right">
-              <img
-                src="https://t2.genius.com/unsafe/867x0/https%3A%2F%2Fimages.genius.com%2F89a021f7c6459c37191034e7f13363fa.1000x1000x1.png"
-              />
-              <div class="rating">10/10</div>
-            </div>
-          </div>
-          <div class="marquee">
-            <div class="item">
-              <div class="genre">Emo</div>
-              <div class="genre">Pop punk</div>
-              <div class="genre">Punk rock</div>
-              <div class="genre">Post hardcore</div>
-            </div>
-            <div class="item">
-              <div class="genre">Emo</div>
-              <div class="genre">Pop punk</div>
-              <div class="genre">Punk rock</div>
-              <div class="genre">Post hardcore</div>
-            </div>
-            <div class="item">
-              <div class="genre">Emo</div>
-              <div class="genre">Pop punk</div>
-              <div class="genre">Punk rock</div>
-              <div class="genre">Post hardcore</div>
-            </div>
-          </div>
+      <h1>Music</h1>
+
+      <p>
+        A lot of times I'm asked for music recommendations, so this is a page I've dedicated to that. Just search for a
+        genre and you can see my top recommendations in that genre for albums and singles/songs! This page is an
+        ever-growing list, so expect more to be added in the future!
+      </p>
+      <div class="section">
+        <div class="heading">
+          <h2>Albums</h2>
+          <i class="fa-solid fa-angle-down" onclick="toggle('albums')" id="albumToggle"></i>
         </div>
-        <div class="music">
-          <div class="nacont">
-            <div class="name na">
-              The Elysian Grandeval Galèriarch
+        <div class="albums" id="albums">
+          <div class="intro">
+            <p>These are some of my favourite albums of all time.</p>
+            <p>Search for genres:</p>
+            <input type="text" name="genres" id="genresAlbums" class="genres" />
+          </div>
+          <div class="music">
+            <div class="nacont">
+              <div class="name na">I Brought You My Bullets, You Brought Me Your Love</div>
             </div>
-          </div>
-          <div class="nacont">
-            <div class="artist na">Infant Annihilator</div>
-          </div>
-          <div class="divided">
-            <div class="left">
-              <div class="abt">
-                <p>
-                  This album is definitely one of my favoruite deathcore albums of all time. The themes and
-                  anti-religious imagery are all really well communicated.
-                </p>
+            <div class="nacont"><div class="artist na">My Chemical Romance</div></div>
+            <div class="divided">
+              <div class="left">
+                <div class="abt">
+                  <p>
+                    I love this album, it is definitely within my top 5 of all time. The rawness of the vocals, and
+                    intense emotion in the lyrics ties it together for me.
+                  </p>
+                </div>
+              </div>
+              <div class="right">
+                <img
+                  src="https://t2.genius.com/unsafe/867x0/https%3A%2F%2Fimages.genius.com%2F89a021f7c6459c37191034e7f13363fa.1000x1000x1.png"
+                />
+                <div class="rating">10/10</div>
               </div>
             </div>
-            <div class="right">
-              <img src="https://i.scdn.co/image/ab67616d0000b273adf2d51bd20ce947745e703f" />
-              <div class="rating">9/10</div>
-            </div>
-          </div>
-          <div class="marquee">
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Death metal</div>
-              <div class="genre">Metal</div>
-              <div class="genre">Technical death metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Death metal</div>
-              <div class="genre">Metal</div>
-              <div class="genre">Technical death metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Death metal</div>
-              <div class="genre">Metal</div>
-              <div class="genre">Technical death metal</div>
-            </div>
-          </div>
-        </div>
-        <div class="music">
-          <div class="nacont">
-            <div class="name na">
-              The Poetic Edda
-            </div>
-          </div>
-          <div class="nacont">
-            <div class="artist na">Disembodied Tyrant & Synestia</div>
-          </div>
-          <div class="divided">
-            <div class="left">
-              <div class="abt">
-                <p>
-                  This EP is possibly the best deathcore EP I have ever listened to. I never enjoyed symphonic/melodic
-                  deathcore until listening to "I, Devourer".
-                </p>
+            <div class="marquee">
+              <div class="item">
+                <div class="genre">Emo</div>
+                <div class="genre">Pop punk</div>
+                <div class="genre">Punk rock</div>
+                <div class="genre">Post hardcore</div>
+              </div>
+              <div class="item">
+                <div class="genre">Emo</div>
+                <div class="genre">Pop punk</div>
+                <div class="genre">Punk rock</div>
+                <div class="genre">Post hardcore</div>
+              </div>
+              <div class="item">
+                <div class="genre">Emo</div>
+                <div class="genre">Pop punk</div>
+                <div class="genre">Punk rock</div>
+                <div class="genre">Post hardcore</div>
               </div>
             </div>
-            <div class="right">
-              <img src="https://f4.bcbits.com/img/a1599185115_10.jpg" />
-              <div class="rating">9.5/10</div>
-            </div>
           </div>
-          <div class="marquee">
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Symphonic deathcore</div>
-              <div class="genre">Melodic deathcore</div>
-              <div class="genre">Progressive deathcore</div>
-              <div class="genre">Orchestral deathcore</div>
-              <div class="genre">Technical death metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Symphonic deathcore</div>
-              <div class="genre">Melodic deathcore</div>
-              <div class="genre">Progressive deathcore</div>
-              <div class="genre">Orchestral deathcore</div>
-              <div class="genre">Technical death metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Symphonic deathcore</div>
-              <div class="genre">Melodic deathcore</div>
-              <div class="genre">Progressive deathcore</div>
-              <div class="genre">Orchestral deathcore</div>
-              <div class="genre">Technical death metal</div>
-            </div>
-          </div>
-        </div>
-        <div class="music">
-          <div class="nacont">
-            <div class="name na">
-              Evisceration Plague
-            </div>
-          </div>
-          <div class="nacont">
-            <div class="artist na">Cannibal Corpse</div>
-          </div>
-          <div class="divided">
-            <div class="left">
-              <div class="abt">
-                <p>
-                  This was my first death metal album that I ever enjoyed or really even listened to. "Priests of Sodom"
-                  is still one of my favourite death metal songs.
-                </p>
+          <div class="music">
+            <div class="nacont">
+              <div class="name na">
+                The Elysian Grandeval Galèriarch
               </div>
             </div>
-            <div class="right">
-              <img src="https://upload.wikimedia.org/wikipedia/en/7/75/Evisceration_plague.jpg" />
-              <div class="rating">8.5/10</div>
+            <div class="nacont">
+              <div class="artist na">Infant Annihilator</div>
             </div>
-          </div>
-          <div class="marquee">
-            <div class="item">
-              <div class="genre">Death metal</div>
-              <div class="genre">Metal</div>
-              <div class="genre">Brutal death metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Death metal</div>
-              <div class="genre">Metal</div>
-              <div class="genre">Brutal death metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Death metal</div>
-              <div class="genre">Metal</div>
-              <div class="genre">Brutal death metal</div>
-            </div>
-          </div>
-        </div>
-        <div class="music">
-          <div class="nacont">
-            <div class="name na">
-              TEKKNO
-            </div>
-          </div>
-          <div class="nacont">
-            <div class="artist na">Electric Callboy</div>
-          </div>
-          <div class="divided">
-            <div class="left">
-              <div class="abt">
-                <p>
-                  Electric Callboy are just so innovative, and while they may be funny, their music is also just really
-                  good.
-                </p>
+            <div class="divided">
+              <div class="left">
+                <div class="abt">
+                  <p>
+                    This album is definitely one of my favoruite deathcore albums of all time. The themes and
+                    anti-religious imagery are all really well communicated.
+                  </p>
+                </div>
+              </div>
+              <div class="right">
+                <img src="https://i.scdn.co/image/ab67616d0000b273adf2d51bd20ce947745e703f" />
+                <div class="rating">9/10</div>
               </div>
             </div>
-            <div class="right">
-              <img src="https://m.media-amazon.com/images/I/71p3OvCd+zL.jpg" />
-              <div class="rating">7/10</div>
-            </div>
-          </div>
-          <div class="marquee">
-            <div class="item">
-              <div class="genre">Metalcore</div>
-              <div class="genre">Electropop</div>
-              <div class="genre">Electronicore</div>
-              <div class="genre">Alternative rock</div>
-              <div class="genre">Synth-pop</div>
-              <div class="genre">Pop metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Metalcore</div>
-              <div class="genre">Electropop</div>
-              <div class="genre">Electronicore</div>
-              <div class="genre">Alternative rock</div>
-              <div class="genre">Synth-pop</div>
-              <div class="genre">Pop metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Metalcore</div>
-              <div class="genre">Electropop</div>
-              <div class="genre">Electronicore</div>
-              <div class="genre">Alternative rock</div>
-              <div class="genre">Synth-pop</div>
-              <div class="genre">Pop metal</div>
-            </div>
-          </div>
-        </div>
-        <div class="music">
-          <div class="nacont">
-            <div class="name na">
-              Pulse Demon
-            </div>
-          </div>
-          <div class="nacont">
-            <div class="artist na">Merzbow</div>
-          </div>
-          <div class="divided">
-            <div class="left">
-              <div class="abt">
-                <p>
-                  Some very decent noise. Merzbow is definitely a creator of some intense noise. I do somewhat enjoy it.
-                </p>
+            <div class="marquee">
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Death metal</div>
+                <div class="genre">Metal</div>
+                <div class="genre">Technical death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Death metal</div>
+                <div class="genre">Metal</div>
+                <div class="genre">Technical death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Death metal</div>
+                <div class="genre">Metal</div>
+                <div class="genre">Technical death metal</div>
               </div>
             </div>
-            <div class="right">
-              <img src="https://upload.wikimedia.org/wikipedia/en/d/db/Merzbow-pulsedemon.jpg" />
-              <div class="rating">8/10</div>
-            </div>
           </div>
-          <div class="marquee">
-            <div class="item">
-              <div class="genre">Noise</div>
-              <div class="genre">Noise wall</div>
-              <div class="genre">Harsh noise</div>
-            </div>
-            <div class="item">
-              <div class="genre">Noise</div>
-              <div class="genre">Noise wall</div>
-              <div class="genre">Harsh noise</div>
-            </div>
-            <div class="item">
-              <div class="genre">Noise</div>
-              <div class="genre">Noise wall</div>
-              <div class="genre">Harsh noise</div>
-            </div>
-          </div>
-        </div>
-        <div class="music">
-          <div class="nacont">
-            <div class="name na">
-              Decimate
-            </div>
-          </div>
-          <div class="nacont">
-            <div class="artist na">Rev3rent</div>
-          </div>
-          <div class="divided">
-            <div class="left">
-              <div class="abt">
-                <p>
-                  Rev3rent is a fairly new band, and they make some insanely good deathcore. "As He Splits The Earth" is
-                  great.
-                </p>
+          <div class="music">
+            <div class="nacont">
+              <div class="name na">
+                The Poetic Edda
               </div>
             </div>
-            <div class="right">
-              <img src="https://i.scdn.co/image/ab67616d0000b273cb00d24a909f1cbdbbf615da" />
-              <div class="rating">9.5/10</div>
+            <div class="nacont">
+              <div class="artist na">Disembodied Tyrant & Synestia</div>
             </div>
-          </div>
-          <div class="marquee">
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Metalcore</div>
-              <div class="genre">Slam death metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Metalcore</div>
-              <div class="genre">Slam death metal</div>
-            </div>
-            <div class="item">
-              <div class="genre">Deathcore</div>
-              <div class="genre">Metalcore</div>
-              <div class="genre">Slam death metal</div>
-            </div>
-          </div>
-        </div>
-        <div class="music">
-          <div class="nacont">
-            <div class="name na">
-              Hippopotomonstrosesquippedaliophobia
-            </div>
-          </div>
-          <div class="nacont">
-            <div class="artist na">Xavlegbmaofffassssitimiwoamndutroabcwapwaeiippohfffx</div>
-          </div>
-          <div class="divided">
-            <div class="left">
-              <div class="abt">
-                <p>
-                  Xavleg may have a bit of a gimmick, but they do make some great music. This new album from them is
-                  great, especially "Burnt Lopadot...".
-                </p>
+            <div class="divided">
+              <div class="left">
+                <div class="abt">
+                  <p>
+                    This EP is possibly the best deathcore EP I have ever listened to. I never enjoyed symphonic/melodic
+                    deathcore until listening to "I, Devourer".
+                  </p>
+                </div>
+              </div>
+              <div class="right">
+                <img src="https://f4.bcbits.com/img/a1599185115_10.jpg" />
+                <div class="rating">9.5/10</div>
               </div>
             </div>
-            <div class="right">
-              <img src="https://i.scdn.co/image/ab67616d0000b273d7f2a1834a64de8200886a03" />
-              <div class="rating">8.25/10</div>
+            <div class="marquee">
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Symphonic deathcore</div>
+                <div class="genre">Melodic deathcore</div>
+                <div class="genre">Progressive deathcore</div>
+                <div class="genre">Orchestral deathcore</div>
+                <div class="genre">Technical death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Symphonic deathcore</div>
+                <div class="genre">Melodic deathcore</div>
+                <div class="genre">Progressive deathcore</div>
+                <div class="genre">Orchestral deathcore</div>
+                <div class="genre">Technical death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Symphonic deathcore</div>
+                <div class="genre">Melodic deathcore</div>
+                <div class="genre">Progressive deathcore</div>
+                <div class="genre">Orchestral deathcore</div>
+                <div class="genre">Technical death metal</div>
+              </div>
             </div>
           </div>
-          <div class="marquee">
-            <div class="item">
-              <div class="genre">Deathgrind</div>
-              <div class="genre">Goregrind</div>
-              <div class="genre">Slamming brutal death metal</div>
-              <div class="genre">Brutal death metal</div>
-              <div class="genre">Experimental death metal</div>
+          <div class="music">
+            <div class="nacont">
+              <div class="name na">
+                Evisceration Plague
+              </div>
             </div>
-            <div class="item">
-              <div class="genre">Deathgrind</div>
-              <div class="genre">Goregrind</div>
-              <div class="genre">Slamming brutal death metal</div>
-              <div class="genre">Brutal death metal</div>
-              <div class="genre">Experimental death metal</div>
+            <div class="nacont">
+              <div class="artist na">Cannibal Corpse</div>
             </div>
-            <div class="item">
-              <div class="genre">Deathgrind</div>
-              <div class="genre">Goregrind</div>
-              <div class="genre">Slamming brutal death metal</div>
-              <div class="genre">Brutal death metal</div>
-              <div class="genre">Experimental death metal</div>
+            <div class="divided">
+              <div class="left">
+                <div class="abt">
+                  <p>
+                    This was my first death metal album that I ever enjoyed or really even listened to. "Priests of
+                    Sodom" is still one of my favourite death metal songs.
+                  </p>
+                </div>
+              </div>
+              <div class="right">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/75/Evisceration_plague.jpg" />
+                <div class="rating">8.5/10</div>
+              </div>
+            </div>
+            <div class="marquee">
+              <div class="item">
+                <div class="genre">Death metal</div>
+                <div class="genre">Metal</div>
+                <div class="genre">Brutal death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Death metal</div>
+                <div class="genre">Metal</div>
+                <div class="genre">Brutal death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Death metal</div>
+                <div class="genre">Metal</div>
+                <div class="genre">Brutal death metal</div>
+              </div>
+            </div>
+          </div>
+          <div class="music">
+            <div class="nacont">
+              <div class="name na">
+                TEKKNO
+              </div>
+            </div>
+            <div class="nacont">
+              <div class="artist na">Electric Callboy</div>
+            </div>
+            <div class="divided">
+              <div class="left">
+                <div class="abt">
+                  <p>
+                    Electric Callboy are just so innovative, and while they may be funny, their music is also just
+                    really good.
+                  </p>
+                </div>
+              </div>
+              <div class="right">
+                <img src="https://m.media-amazon.com/images/I/71p3OvCd+zL.jpg" />
+                <div class="rating">7/10</div>
+              </div>
+            </div>
+            <div class="marquee">
+              <div class="item">
+                <div class="genre">Metalcore</div>
+                <div class="genre">Electropop</div>
+                <div class="genre">Electronicore</div>
+                <div class="genre">Alternative rock</div>
+                <div class="genre">Synth-pop</div>
+                <div class="genre">Pop metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Metalcore</div>
+                <div class="genre">Electropop</div>
+                <div class="genre">Electronicore</div>
+                <div class="genre">Alternative rock</div>
+                <div class="genre">Synth-pop</div>
+                <div class="genre">Pop metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Metalcore</div>
+                <div class="genre">Electropop</div>
+                <div class="genre">Electronicore</div>
+                <div class="genre">Alternative rock</div>
+                <div class="genre">Synth-pop</div>
+                <div class="genre">Pop metal</div>
+              </div>
+            </div>
+          </div>
+          <div class="music">
+            <div class="nacont">
+              <div class="name na">
+                Pulse Demon
+              </div>
+            </div>
+            <div class="nacont">
+              <div class="artist na">Merzbow</div>
+            </div>
+            <div class="divided">
+              <div class="left">
+                <div class="abt">
+                  <p>
+                    Some very decent noise. Merzbow is definitely a creator of some intense noise. I do somewhat enjoy
+                    it.
+                  </p>
+                </div>
+              </div>
+              <div class="right">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/db/Merzbow-pulsedemon.jpg" />
+                <div class="rating">8/10</div>
+              </div>
+            </div>
+            <div class="marquee">
+              <div class="item">
+                <div class="genre">Noise</div>
+                <div class="genre">Noise wall</div>
+                <div class="genre">Harsh noise</div>
+              </div>
+              <div class="item">
+                <div class="genre">Noise</div>
+                <div class="genre">Noise wall</div>
+                <div class="genre">Harsh noise</div>
+              </div>
+              <div class="item">
+                <div class="genre">Noise</div>
+                <div class="genre">Noise wall</div>
+                <div class="genre">Harsh noise</div>
+              </div>
+            </div>
+          </div>
+          <div class="music">
+            <div class="nacont">
+              <div class="name na">
+                Decimate
+              </div>
+            </div>
+            <div class="nacont">
+              <div class="artist na">Rev3rent</div>
+            </div>
+            <div class="divided">
+              <div class="left">
+                <div class="abt">
+                  <p>
+                    Rev3rent is a fairly new band, and they make some insanely good deathcore. "As He Splits The Earth"
+                    is great.
+                  </p>
+                </div>
+              </div>
+              <div class="right">
+                <img src="https://i.scdn.co/image/ab67616d0000b273cb00d24a909f1cbdbbf615da" />
+                <div class="rating">9.5/10</div>
+              </div>
+            </div>
+            <div class="marquee">
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Metalcore</div>
+                <div class="genre">Slam death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Metalcore</div>
+                <div class="genre">Slam death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Deathcore</div>
+                <div class="genre">Metalcore</div>
+                <div class="genre">Slam death metal</div>
+              </div>
+            </div>
+          </div>
+          <div class="music">
+            <div class="nacont">
+              <div class="name na">
+                Hippopotomonstrosesquippedaliophobia
+              </div>
+            </div>
+            <div class="nacont">
+              <div class="artist na">Xavlegbmaofffassssitimiwoamndutroabcwapwaeiippohfffx</div>
+            </div>
+            <div class="divided">
+              <div class="left">
+                <div class="abt">
+                  <p>
+                    Xavleg may have a bit of a gimmick, but they do make some great music. This new album from them is
+                    great, especially "Burnt Lopadot...".
+                  </p>
+                </div>
+              </div>
+              <div class="right">
+                <img src="https://i.scdn.co/image/ab67616d0000b273d7f2a1834a64de8200886a03" />
+                <div class="rating">8.25/10</div>
+              </div>
+            </div>
+            <div class="marquee">
+              <div class="item">
+                <div class="genre">Deathgrind</div>
+                <div class="genre">Goregrind</div>
+                <div class="genre">Slamming brutal death metal</div>
+                <div class="genre">Brutal death metal</div>
+                <div class="genre">Experimental death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Deathgrind</div>
+                <div class="genre">Goregrind</div>
+                <div class="genre">Slamming brutal death metal</div>
+                <div class="genre">Brutal death metal</div>
+                <div class="genre">Experimental death metal</div>
+              </div>
+              <div class="item">
+                <div class="genre">Deathgrind</div>
+                <div class="genre">Goregrind</div>
+                <div class="genre">Slamming brutal death metal</div>
+                <div class="genre">Brutal death metal</div>
+                <div class="genre">Experimental death metal</div>
+              </div>
             </div>
           </div>
         </div>

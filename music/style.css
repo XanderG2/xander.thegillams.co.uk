@@ -148,3 +148,27 @@ nav ul li:hover {
 .artist::-webkit-scrollbar {
   display: none;
 }
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading div {
+  align-items: center;
+  vertical-align: middle;
+}
+
+.heading h2 {
+  margin: 0;
+}
+
+.heading i {
+  margin-right: 25px;
+}
+
+.genres {
+  height: 1rem;
+  width: 100%;
+}
