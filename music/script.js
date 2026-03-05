@@ -30,7 +30,7 @@ function searchGenres() {
 
 function searchSingles() {
   const toSearch = document.getElementById("genresSingles").value.toLowerCase();
-  const els = document.querySelector(".albums").querySelectorAll(".music");
+  const els = document.querySelector(".singles").querySelectorAll(".music");
   els.forEach(el => {
     const genres = Array.from(el.querySelectorAll(".genre")).map(e => e.innerText.toLowerCase());
     const contains = genres.some(txt => txt.includes(toSearch));
