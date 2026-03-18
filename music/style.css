@@ -94,16 +94,21 @@ nav ul li:hover {
 }
 
 .divided {
-  display: flex;
   width: 100%;
 }
 
 .right {
   width: 33%;
+  float: right;
+  margin-left: 10px;
 }
 
-.left {
-  width: 67%;
+.dividedsingle {
+  display: flex;
+}
+
+.img {
+  width: 33%;
 }
 
 .rating {
